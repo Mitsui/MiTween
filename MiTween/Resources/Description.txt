@@ -1,0 +1,4 @@
+﻿Client of Twitter. Free software(GPLv3)
+<Contacts>
+Twitter: @Mitui3Tweet3
+Mail: tweet3@hotmail.co.jp
