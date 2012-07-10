@@ -1164,13 +1164,12 @@ Public Class TweenMain
         'ステータスバーのアカウント切り替え部分
 
         ToolStripDropDownButton1.Text = tw.Username
-        ToolStripComboBox1.Text = tw.Username
         If _cfgCommon.UserAccounts.Count > 0 Then
             For Each u In _cfgCommon.UserAccounts.ToArray
                 ToolStripComboBox1.Items.Add(u.Username)
             Next
         End If
-
+        ToolStripComboBox1.Text = ToolStripDropDownButton1.Text
     End Sub
 
     Private Sub CreatePictureServices()
@@ -9023,7 +9022,6 @@ RETRY:
         UrlConvert(UrlConverter.Jmp)
     End Sub
 
-
     Private Class GetApiInfoArgs
         Public tw As Twitter
         Public info As ApiInfo
@@ -10823,17 +10821,15 @@ RETRY:
     End Sub
     '投稿エリアに、ステータスバーを情報を入力する
     Private Sub StatusLabelUrl_Click(sender As System.Object, e As System.EventArgs) Handles StatusLabelUrl.Click
-        StatusText.Text += GetStatusLabelText()
-        StatusText.Focus()
-        StatusText.SelectionStart = StatusText.TextLength
+        'StatusText.Text += GetStatusLabelText()        '投稿エリアにステータスバーの情報を追加
+
+        StatusText.Text += "[時速: 投 " + _postTimestamps.Count.ToString + "/ ☆ " + _favTimestamps.Count.ToString + "/ 流 " + _tlCount.ToString + "]"       '流速情報のみを投稿エリアに追加する
+        StatusText.Focus()                                  '投稿エリアにフォーカスを移す
+        StatusText.SelectionStart = StatusText.TextLength   'カーソルを一番後ろに移動
 
     End Sub
 
     Private Sub ToolStripDropDownButton1_DropDownItemClicked(sender As Object, e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ToolStripDropDownButton1.DropDownItemClicked
-
-
-
-
 
         'ToolStripDropDownButton1.Text = tw.Username
         'If _cfgCommon.UserAccounts.Count > 0 Then
@@ -10867,6 +10863,6 @@ RETRY:
 
     Private Sub ToolStripComboBox1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ToolStripComboBox1.SelectedIndexChanged
         ToolStripDropDownButton1.Text = ToolStripComboBox1.SelectedItem.ToString
-
+        ToolStripDropDownButton1.HideDropDown()         'ドロップダウンを閉じる
     End Sub
 End Class

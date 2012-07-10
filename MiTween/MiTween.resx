@@ -124,6 +124,10 @@
   <data name="StatusStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ToolStripComboBox1.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ToolStripComboBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 26</value>
@@ -152,12 +156,11 @@
   <data name="ToolStripDropDownButton1.Text" xml:space="preserve">
     <value>ToolStripDropDownButton1</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="StatusLabelUrl.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="StatusLabelUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
+    <value>196, 22</value>
   </data>
   <data name="StatusLabelUrl.Text" xml:space="preserve">
     <value>ToolStripStatusLabel1</value>
@@ -169,7 +172,7 @@
     <value>False</value>
   </data>
   <data name="StatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 22</value>
+    <value>115, 22</value>
   </data>
   <data name="StatusLabel.Text" xml:space="preserve">
     <value>Starting...</value>
@@ -274,7 +277,7 @@
     <value>0, 0</value>
   </data>
   <data name="StatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>558, 27</value>
+    <value>557, 27</value>
   </data>
   <data name="StatusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -409,7 +412,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ListTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 274</value>
+    <value>553, 280</value>
   </data>
   <data name="ListTab.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -433,7 +436,7 @@
     <value>0, 0</value>
   </data>
   <data name="TimelinePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 274</value>
+    <value>553, 280</value>
   </data>
   <data name="TimelinePanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -791,7 +794,7 @@
     <value>0, 0</value>
   </data>
   <data name="ImageSelectedPicture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 246</value>
+    <value>553, 252</value>
   </data>
   <data name="ImageSelectedPicture.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -818,7 +821,7 @@
     <value>57, 3</value>
   </data>
   <data name="ImagefilePathText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 19</value>
+    <value>261, 19</value>
   </data>
   <data name="ImagefilePathText.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -842,7 +845,7 @@
     <value>Off</value>
   </data>
   <data name="FilePickButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 3</value>
+    <value>318, 3</value>
   </data>
   <data name="FilePickButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 22</value>
@@ -872,7 +875,7 @@
     <value>Off</value>
   </data>
   <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>341, 3</value>
+    <value>340, 3</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 22</value>
@@ -908,7 +911,7 @@
     <value>TwitVideo</value>
   </data>
   <data name="ImageServiceCombo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>398, 3</value>
+    <value>397, 3</value>
   </data>
   <data name="ImageServiceCombo.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 20</value>
@@ -935,7 +938,7 @@
     <value>Off</value>
   </data>
   <data name="ImageCancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>495, 3</value>
+    <value>494, 3</value>
   </data>
   <data name="ImageCancelButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 22</value>
@@ -995,13 +998,13 @@
     <value>Bottom</value>
   </data>
   <data name="ImagePathPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 246</value>
+    <value>0, 252</value>
   </data>
   <data name="ImagePathPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="ImagePathPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 28</value>
+    <value>553, 28</value>
   </data>
   <data name="ImagePathPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1025,7 +1028,7 @@
     <value>0, 0</value>
   </data>
   <data name="ImageSelectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 274</value>
+    <value>553, 280</value>
   </data>
   <data name="ImageSelectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1052,7 +1055,7 @@
     <value>0, 0</value>
   </data>
   <data name="ProfilePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 274</value>
+    <value>553, 280</value>
   </data>
   <data name="ProfilePanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1220,7 +1223,7 @@
     <value>3, 3, 3, 0</value>
   </data>
   <data name="NameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 14</value>
+    <value>306, 14</value>
   </data>
   <data name="NameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1253,7 +1256,7 @@
     <value>Off</value>
   </data>
   <data name="DateTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 3</value>
+    <value>447, 3</value>
   </data>
   <data name="DateTimeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 0</value>
@@ -1316,7 +1319,7 @@
     <value>Off</value>
   </data>
   <data name="SourceLinkLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>492, 3</value>
+    <value>491, 3</value>
   </data>
   <data name="SourceLinkLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 0</value>
@@ -1514,7 +1517,7 @@
     <value>59, 20</value>
   </data>
   <data name="PostBrowser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 69</value>
+    <value>491, 63</value>
   </data>
   <data name="PostBrowser.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1541,7 +1544,7 @@
     <value>2</value>
   </data>
   <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 92</value>
+    <value>553, 86</value>
   </data>
   <data name="TableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1583,7 +1586,7 @@
     <value>0, 0</value>
   </data>
   <data name="StatusText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>466, 19</value>
+    <value>465, 19</value>
   </data>
   <data name="StatusText.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1607,7 +1610,7 @@
     <value>Off</value>
   </data>
   <data name="lblLen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>466, 0</value>
+    <value>465, 0</value>
   </data>
   <data name="lblLen.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 25</value>
@@ -1640,7 +1643,7 @@
     <value>Off</value>
   </data>
   <data name="PostButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 0</value>
+    <value>509, 0</value>
   </data>
   <data name="PostButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 25</value>
@@ -1679,10 +1682,10 @@
     <value>19</value>
   </data>
   <data name="SplitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 119</value>
+    <value>553, 113</value>
   </data>
   <data name="SplitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>92</value>
+    <value>86</value>
   </data>
   <data name="SplitContainer2.SplitterWidth" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1724,7 +1727,7 @@
     <value>0, 0</value>
   </data>
   <data name="PreviewPicture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 121</value>
+    <value>178, 115</value>
   </data>
   <data name="PreviewPicture.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -1754,7 +1757,7 @@
     <value>178, 0</value>
   </data>
   <data name="PreviewScrollBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 121</value>
+    <value>17, 115</value>
   </data>
   <data name="PreviewScrollBar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1784,7 +1787,7 @@
     <value>1</value>
   </data>
   <data name="SplitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 119</value>
+    <value>553, 113</value>
   </data>
   <data name="SplitContainer3.SplitterDistance" type="System.Int32, mscorlib">
     <value>355</value>
@@ -1820,10 +1823,10 @@
     <value>23</value>
   </data>
   <data name="SplitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>558, 403</value>
+    <value>557, 403</value>
   </data>
   <data name="SplitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>278</value>
+    <value>284</value>
   </data>
   <data name="SplitContainer1.SplitterWidth" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1844,7 +1847,7 @@
     <value>0</value>
   </data>
   <data name="ToolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>558, 403</value>
+    <value>557, 403</value>
   </data>
   <data name="&gt;&gt;ToolStripContainer1.ContentPanel.Name" xml:space="preserve">
     <value>ToolStripContainer1.ContentPanel</value>
@@ -1889,7 +1892,7 @@
     <value>2</value>
   </data>
   <data name="ToolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>558, 456</value>
+    <value>557, 456</value>
   </data>
   <data name="ToolStripContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2720,7 +2723,7 @@
     <value>0, 0</value>
   </data>
   <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>558, 26</value>
+    <value>557, 26</value>
   </data>
   <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3077,14 +3080,14 @@
     <value>789, 99</value>
   </metadata>
   <metadata name="PostStateImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>143, 17</value>
+    <value>157, 17</value>
   </metadata>
   <data name="PostStateImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADW
-        HAAAAk1TRnQBSQFMAgEBDwEAAZQBBQGUAQUBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        HAAAAk1TRnQBSQFMAgEBDwEAAQwBBgEMAQYBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABQAMAAQEBAAEgBgABQP8AIwADwAH/A8AB/xAAA8AB/yQAA8AB/wPAAf8QAAPAAf8kAAPAAf8DwAH/
         EAADwAH/YQABmQL/AQABmQL/EQABmQEAAf8DwAH/IQABmQL/AQABmQL/EQABmQEAAf8DwAH/IQABmQL/
         AQABmQL/EQABmQEAAf8DwAH/WAADwAH/AQABmQL/AQABmQL/A8AB/wPAAf8DwAH/CQABmQEAAf8DwAH/
@@ -3220,7 +3223,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>558, 456</value>
+    <value>557, 456</value>
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>Off</value>
@@ -3248,12 +3251,6 @@
   </data>
   <data name="&gt;&gt;StatusLabelUrl.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusLabel.Name" xml:space="preserve">
-    <value>StatusLabel</value>
-  </data>
-  <data name="&gt;&gt;StatusLabel.Type" xml:space="preserve">
-    <value>MiTween.TweenCustomControl.ToolStripLabelHistory, MiTween, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;HashStripSplitButton.Name" xml:space="preserve">
     <value>HashStripSplitButton</value>
@@ -4718,6 +4715,12 @@
   </data>
   <data name="&gt;&gt;PostStateImageList.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusLabel.Name" xml:space="preserve">
+    <value>StatusLabel</value>
+  </data>
+  <data name="&gt;&gt;StatusLabel.Type" xml:space="preserve">
+    <value>MiTween.TweenCustomControl.ToolStripLabelHistory, MiTween, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>TweenMain</value>
