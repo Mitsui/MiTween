@@ -5159,9 +5159,9 @@ RETRY:
             End Try
         End If
     End Sub
-    'ヘルプメニューTweenまとめサイト
-    Private Sub MatomeMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MatomeMenuItem.Click
-        OpenUriAsync("http://sourceforge.jp/projects/tween/wiki/FrontPage")
+    'ヘルプメニューMiTweenサイト
+    Private Sub MiTweenWebSiteMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MiTweenWebSiteMenuItem.Click
+        OpenUriAsync("https://sites.google.com/site/thesubstituteformemo/Home/tween-gai-zao-ban")
     End Sub
     'ヘルプメニューショートカットキー一覧
     Private Sub ShortcutKeyListMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShortcutKeyListMenuItem.Click
@@ -6633,8 +6633,9 @@ RETRY:
             Return False
         End If
     End Function
-
+    'タブをクリックした時
     Private Sub ListTab_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ListTab.MouseClick
+        'スクロールボタンが押された時
         If e.Button = Windows.Forms.MouseButtons.Middle Then
             For i As Integer = 0 To Me.ListTab.TabPages.Count - 1
                 If Me.ListTab.GetTabRect(i).Contains(e.Location) Then
@@ -6645,12 +6646,12 @@ RETRY:
             Next
         End If
     End Sub
-
+    'タブをダブルクリックした時
     Private Sub Tabs_DoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ListTab.MouseDoubleClick
-        Dim tn As String = ListTab.SelectedTab.Text
-        TabRename(tn)
+        Dim tn As String = ListTab.SelectedTab.Text '選択されたタブ名を取得
+        TabRename(tn)   'タブのリネーム
     End Sub
-
+    'タブでマウスボタンが押された時
     Private Sub Tabs_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ListTab.MouseDown
         If SettingDialog.TabMouseLock Then Exit Sub
         Dim cpos As New Point(e.X, e.Y)
@@ -7877,7 +7878,7 @@ RETRY:
             '_mySize = Me.ClientSize                     'サイズ保持（最小化・最大化されたまま終了した場合の対応用）
             Me.DesktopLocation = _cfgLocal.FormLocation
             '_myLoc = Me.DesktopLocation                        '位置保持（最小化・最大化されたまま終了した場合の対応用）
-            
+
             If _cfgLocal.SplitterDistance > Me.SplitContainer1.Panel1MinSize AndAlso
                 _cfgLocal.SplitterDistance < Me.SplitContainer1.Height - Me.SplitContainer1.Panel2MinSize - Me.SplitContainer1.SplitterWidth Then
                 Me.SplitContainer1.SplitterDistance = _cfgLocal.SplitterDistance 'Splitterの位置設定
@@ -9940,7 +9941,7 @@ RETRY:
         e.Result = counter
     End Sub
 
-    Private Sub RtCountMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RtCountMenuItem.Click
+    Private Sub RtCountMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RtCountMenuItem.Click, RtCountToolStripMenuItem.Click
         If Me.ExistCurrentPost Then
             Using _info As New FormInfo(Me, My.Resources.RtCountMenuItem_ClickText1, _
                             AddressOf GetRetweet_DoWork)
@@ -10791,7 +10792,14 @@ RETRY:
 
         ' ListView上でのCtrl+A
         For i As Integer = 0 To _curList.VirtualListSize - 1
-            _curList.SelectedIndices.Add(i)
+
+            '未読の検出（ツイート数が多くなった時に効果あり）
+            If _curList.Items(i).SubItems.Item(5).Text = "★" Then
+
+                _curList.SelectedIndices.Add(i)     '選択範囲を追加
+
+            End If
+
         Next
 
         '未読にする
