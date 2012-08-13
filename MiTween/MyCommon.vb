@@ -131,10 +131,15 @@ Public Module MyCommon
         ErrorState              'エラー表示のみで後処理終了(認証エラー時など)
     End Enum
 
+    'デフォルトタブのタブ名
     Public Structure DEFAULTTAB
-        Const RECENT As String = "Recent"
-        Const REPLY As String = "Reply"
-        Const DM As String = "Direct"
+        'Const RECENT As String = "Recent"
+        'Const REPLY As String = "Reply"
+        'Const DM As String = "Direct"
+        'Const FAV As String = "Favorites"
+        Const RECENT As String = "Home"
+        Const REPLY As String = "Mentions"
+        Const DM As String = "DM"
         Const FAV As String = "Favorites"
 
         Private dummy As String
