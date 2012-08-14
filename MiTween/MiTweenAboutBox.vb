@@ -43,7 +43,6 @@ Public NotInheritable Class MiTweenAboutBox
         Me.LabelCopyright.Text = My.Application.Info.Copyright
         Me.LabelCompanyName.Text = My.Application.Info.CompanyName
         Me.TextBoxDescription.Text = My.Application.Info.Description
-        Me.ChangeLog.Text = My.Resources.ChangeLog
         Me.TextBoxDescription.Text = My.Resources.Description
     End Sub
 

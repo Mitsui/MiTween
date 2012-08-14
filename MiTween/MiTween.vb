@@ -10873,4 +10873,11 @@ RETRY:
         ToolStripDropDownButton1.Text = ToolStripComboBox1.SelectedItem.ToString
         ToolStripDropDownButton1.HideDropDown()         'ドロップダウンを閉じる
     End Sub
+
+    Private Sub ChangeLogMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ChangeLogMenuItem.Click
+        Using ChangeLog As New ChangeLog
+            ChangeLog.ShowDialog()
+        End Using
+
+    End Sub
 End Class
