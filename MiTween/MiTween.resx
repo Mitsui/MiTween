@@ -160,7 +160,7 @@
     <value>False</value>
   </data>
   <data name="StatusLabelUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>167, 22</value>
   </data>
   <data name="StatusLabelUrl.Text" xml:space="preserve">
     <value>ToolStripStatusLabel1</value>
@@ -259,7 +259,7 @@
     <value>ハッシュタグ設定</value>
   </data>
   <data name="ContextMenuPostMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 214</value>
+    <value>281, 236</value>
   </data>
   <data name="&gt;&gt;ContextMenuPostMode.Name" xml:space="preserve">
     <value>ContextMenuPostMode</value>

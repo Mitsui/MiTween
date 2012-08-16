@@ -10880,4 +10880,11 @@ RETRY:
         End Using
 
     End Sub
+    Private Sub HashStripSplitButton_MouseDown(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles HashStripSplitButton.MouseDown
+
+        If e.Button = Windows.Forms.MouseButtons.Right Then
+
+            HashMgr.ShowDialog()
+        End If
+    End Sub
 End Class
