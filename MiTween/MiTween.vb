@@ -10880,11 +10880,21 @@ RETRY:
         End Using
 
     End Sub
+    'ハッシュタグボタンを右クリックした時に、ハッシュタグ設定を表示
     Private Sub HashStripSplitButton_MouseDown(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles HashStripSplitButton.MouseDown
 
         If e.Button = Windows.Forms.MouseButtons.Right Then
 
             HashMgr.ShowDialog()
+
+        End If
+    End Sub
+
+    Private Sub ListTab_MouseWheel(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ListTab.MouseWheel
+        If e.Delta > 0 Then
+            MsgBox("上方向にスクロールしました。")
+        Else
+            MsgBox("下方向にスクロールしました。")
         End If
     End Sub
 End Class
