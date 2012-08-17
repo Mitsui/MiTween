@@ -10889,12 +10889,20 @@ RETRY:
 
         End If
     End Sub
-
+    'タブをマウスホイールで切り替える
     Private Sub ListTab_MouseWheel(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ListTab.MouseWheel
         If e.Delta > 0 Then
-            MsgBox("上方向にスクロールしました。")
+            If Me.ListTab.SelectedIndex >= 1 Then
+                Me.ListTab.SelectTab(Me.ListTab.SelectedIndex - 1)
+            End If
         Else
-            MsgBox("下方向にスクロールしました。")
+            If Me.ListTab.TabPages.Count - 1 > Me.ListTab.SelectedIndex Then
+                Me.ListTab.SelectTab(Me.ListTab.SelectedIndex + 1)
+            End If
         End If
+    End Sub
+    'タブにカーソルが止まると、タブにフォーカスを移す(タブスクロール用)
+    Private Sub ListTab_MouseHover(sender As Object, e As System.EventArgs) Handles ListTab.MouseHover
+        Me.ListTab.Focus()
     End Sub
 End Class
