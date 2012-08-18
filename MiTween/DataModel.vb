@@ -179,7 +179,7 @@ Public Class TwitterDataModel
         <DataMember(Name:="created_at")> Public CreatedAt As String
         <DataMember(Name:="contributors")> Public Contributors As Integer()
         <DataMember(Name:="favorited")> Public Favorited As Boolean
-        <DataMember(Name:="truncated")> Public Truncated As Boolean
+        <DataMember(Name:="truncated")> Public Truncated As String
         <DataMember(Name:="id")> Public Id As Int64
         <DataMember(Name:="annotations", IsRequired:=False)> Public Annotations As Annotations
         <DataMember(Name:="place", IsRequired:=False)> Public Place As Place
@@ -203,7 +203,7 @@ Public Class TwitterDataModel
         <DataMember(Name:="source")> Public Source As String
         <DataMember(Name:="id_str")> Public IdStr As String
         <DataMember(Name:="coordinates", IsRequired:=False)> Public Coordinates As Coordinates
-        <DataMember(Name:="truncated")> Public Truncated As Boolean
+        <DataMember(Name:="truncated")> Public Truncated As String
         <DataMember(Name:="place", IsRequired:=False)> Public Place As Place
         <DataMember(Name:="user")> Public User As User
         <DataMember(Name:="retweeted_status", IsRequired:=False)> Public RetweetedStatus As RetweetedStatus
