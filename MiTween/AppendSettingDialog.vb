@@ -225,8 +225,8 @@ Public Class AppendSettingDialog
                         tw.VerifyCredentials()
                         u.UserId = tw.UserId
                     End If
-                    Google.GASender.GetInstance.SessionFirst = u.GAFirst
-                    Google.GASender.GetInstance.SessionLast = u.GALast
+                    'Google.GASender.GetInstance.SessionFirst = u.GAFirst
+                    'Google.GASender.GetInstance.SessionLast = u.GALast
                     Exit For
                 End If
             Next
@@ -520,8 +520,8 @@ Public Class AppendSettingDialog
                 For Each u In Me.UserAccounts
                     If u.UserId = Me.InitialUserId Then
                         tw.Initialize(u.Token, u.TokenSecret, u.Username, u.UserId)
-                        Google.GASender.GetInstance.SessionFirst = u.GAFirst
-                        Google.GASender.GetInstance.SessionLast = u.GALast
+                        'Google.GASender.GetInstance.SessionFirst = u.GAFirst
+                        'Google.GASender.GetInstance.SessionLast = u.GALast
                         userSet = True
                         Exit For
                     End If

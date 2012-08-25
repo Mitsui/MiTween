@@ -214,7 +214,7 @@ Public Class TweenMain
 
     Private displayItem As ImageListViewItem
 
-    Private WithEvents Ga As Google.GASender
+    'Private WithEvents Ga As Google.GASender
 
     'URL短縮のUndo用
     Private Structure urlUndo
@@ -1138,9 +1138,9 @@ Public Class TweenMain
         Me.TweenMain_Resize(Nothing, Nothing)
         If saveRequired Then SaveConfigsAll(False)
 
-        Ga = Google.GASender.GetInstance
-        Google.GASender.GetInstance.SessionFirst = _cfgCommon.GAFirst
-        Google.GASender.GetInstance.SessionLast = _cfgCommon.GALast
+        'Ga = Google.GASender.GetInstance
+        'Google.GASender.GetInstance.SessionFirst = _cfgCommon.GAFirst
+        'Google.GASender.GetInstance.SessionLast = _cfgCommon.GALast
         If tw.UserId = 0 Then
             tw.VerifyCredentials()
             For Each ua In _cfgCommon.UserAccounts
@@ -1156,8 +1156,8 @@ Public Class TweenMain
                 Exit For
             End If
         Next
-        Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
-        Google.GASender.GetInstance().TrackEventWithCategory("post", "start", tw.UserId)
+        'Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
+        'Google.GASender.GetInstance().TrackEventWithCategory("post", "start", tw.UserId)
 
 
         'DebugModeToolStripMenuItem.Enabled = True
@@ -3219,13 +3219,13 @@ Public Class TweenMain
     End Sub
     'ファイル＞設定
     Private Sub SettingStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SettingStripMenuItem.Click, SettingFileMenuItem.Click
-        Google.GASender.GetInstance().TrackPage("/settings", tw.UserId)
+        'Google.GASender.GetInstance().TrackPage("/settings", tw.UserId)
         Dim result As DialogResult
         Dim uid As String = tw.Username.ToLower
         For Each u In SettingDialog.UserAccounts
             If u.UserId = tw.UserId Then
-                u.GAFirst = Ga.SessionFirst
-                u.GALast = Ga.SessionLast
+                'u.GAFirst = Ga.SessionFirst
+                'u.GALast = Ga.SessionLast
                 Exit For
             End If
         Next
@@ -3450,7 +3450,7 @@ Public Class TweenMain
 
         Me.TopMost = SettingDialog.AlwaysTop
         SaveConfigsAll(False)
-        Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
+        'Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
     End Sub
 
     Private Sub PostBrowser_Navigated(ByVal sender As Object, ByVal e As System.Windows.Forms.WebBrowserNavigatedEventArgs) Handles PostBrowser.Navigated
@@ -3597,7 +3597,7 @@ Public Class TweenMain
             End If
         End If
 
-        If Not startup Then Google.GASender.GetInstance().TrackEventWithCategory("post", "add_tab", tw.UserId)
+        'If Not startup Then Google.GASender.GetInstance().TrackEventWithCategory("post", "add_tab", tw.UserId)
         Dim _tabPage As TabPage = New TabPage
         Dim _listCustom As DetailsListView = New DetailsListView
         Dim _colHd1 As ColumnHeader = New ColumnHeader()    'アイコン
@@ -3876,7 +3876,7 @@ Public Class TweenMain
 
         If _statuses.IsDefaultTab(TabName) Then Return False
 
-        Google.GASender.GetInstance().TrackEventWithCategory("post", "remove_tab", tw.UserId)
+        'Google.GASender.GetInstance().TrackEventWithCategory("post", "remove_tab", tw.UserId)
         If confirm Then
             Dim tmp As String = String.Format(My.Resources.RemoveSpecifiedTabText1, Environment.NewLine)
             If MessageBox.Show(tmp, TabName + " " + My.Resources.RemoveSpecifiedTabText2, _
@@ -4029,30 +4029,30 @@ Public Class TweenMain
         If ListTab.Focused OrElse DirectCast(ListTab.SelectedTab.Tag, Control).Focused Then Me.Tag = ListTab.Tag
         TabMenuControl(ListTab.SelectedTab.Text)
         Me.PushSelectPostChain()
-        Select Case _statuses.Tabs(ListTab.SelectedTab.Text).TabType
-            Case TabUsageType.Home
-                Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
-            Case TabUsageType.Mentions
-                Google.GASender.GetInstance().TrackPage("/mentions", tw.UserId)
-            Case TabUsageType.DirectMessage
-                Google.GASender.GetInstance().TrackPage("/direct_messages", tw.UserId)
-            Case TabUsageType.Favorites
-                Google.GASender.GetInstance().TrackPage("/favorites", tw.UserId)
-            Case TabUsageType.Lists
-                Google.GASender.GetInstance().TrackPage("/lists", tw.UserId)
-            Case TabUsageType.Profile
-                Google.GASender.GetInstance().TrackPage("/profile", tw.UserId)
-            Case TabUsageType.LocalQuery
-                Google.GASender.GetInstance().TrackPage("/local_query", tw.UserId)
-            Case TabUsageType.PublicSearch
-                Google.GASender.GetInstance().TrackPage("/search", tw.UserId)
-            Case TabUsageType.Related
-                Google.GASender.GetInstance().TrackPage("/related", tw.UserId)
-            Case TabUsageType.UserDefined
-                Google.GASender.GetInstance().TrackPage("/local_tab", tw.UserId)
-            Case TabUsageType.UserTimeline
-                Google.GASender.GetInstance().TrackPage("/user_timeline", tw.UserId)
-        End Select
+        'Select Case _statuses.Tabs(ListTab.SelectedTab.Text).TabType
+        '    Case TabUsageType.Home
+        '        Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
+        '    Case TabUsageType.Mentions
+        '        Google.GASender.GetInstance().TrackPage("/mentions", tw.UserId)
+        '    Case TabUsageType.DirectMessage
+        '        Google.GASender.GetInstance().TrackPage("/direct_messages", tw.UserId)
+        '    Case TabUsageType.Favorites
+        '        Google.GASender.GetInstance().TrackPage("/favorites", tw.UserId)
+        '    Case TabUsageType.Lists
+        '        Google.GASender.GetInstance().TrackPage("/lists", tw.UserId)
+        '    Case TabUsageType.Profile
+        '        Google.GASender.GetInstance().TrackPage("/profile", tw.UserId)
+        '    Case TabUsageType.LocalQuery
+        '        Google.GASender.GetInstance().TrackPage("/local_query", tw.UserId)
+        '    Case TabUsageType.PublicSearch
+        '        Google.GASender.GetInstance().TrackPage("/search", tw.UserId)
+        '    Case TabUsageType.Related
+        '        Google.GASender.GetInstance().TrackPage("/related", tw.UserId)
+        '    Case TabUsageType.UserDefined
+        '        Google.GASender.GetInstance().TrackPage("/local_tab", tw.UserId)
+        '    Case TabUsageType.UserTimeline
+        '        Google.GASender.GetInstance().TrackPage("/user_timeline", tw.UserId)
+        'End Select
     End Sub
 
     Private Sub SetListProperty()
@@ -6461,8 +6461,8 @@ RETRY:
             _cfgCommon.FoursquarePreviewWidth = SettingDialog.FoursquarePreviewWidth
             _cfgCommon.FoursquarePreviewZoom = SettingDialog.FoursquarePreviewZoom
             _cfgCommon.IsListsIncludeRts = SettingDialog.IsListStatusesIncludeRts
-            _cfgCommon.GAFirst = Google.GASender.GetInstance.SessionFirst
-            _cfgCommon.GALast = Google.GASender.GetInstance.SessionLast
+            '_cfgCommon.GAFirst = Google.GASender.GetInstance.SessionFirst
+            '_cfgCommon.GALast = Google.GASender.GetInstance.SessionLast
             _cfgCommon.TabMouseLock = SettingDialog.TabMouseLock
             _cfgCommon.IsRemoveSameEvent = SettingDialog.IsRemoveSameEvent
             _cfgCommon.IsUseNotifyGrowl = SettingDialog.IsNotifyUseGrowl
@@ -7924,7 +7924,7 @@ RETRY:
     End Sub
 
     Private Sub doRepliedStatusOpen()
-        Google.GASender.GetInstance().TrackPage("/open_reply_to_status", tw.UserId)
+        'Google.GASender.GetInstance().TrackPage("/open_reply_to_status", tw.UserId)
         If Me.ExistCurrentPost AndAlso _curPost.InReplyToUser IsNot Nothing AndAlso _curPost.InReplyToStatusId > 0 Then
             If My.Computer.Keyboard.ShiftKeyDown Then
                 OpenUriAsync("http://twitter.com/" + _curPost.InReplyToUser + "/status/" + _curPost.InReplyToStatusId.ToString())
@@ -8603,7 +8603,7 @@ RETRY:
     End Function
 
     Public Sub OpenUriAsync(ByVal UriString As String)
-        Google.GASender.GetInstance().TrackPage("/open_url", tw.UserId)
+        'Google.GASender.GetInstance().TrackPage("/open_url", tw.UserId)
         Dim args As New GetWorkerArg
         args.type = WORKERTYPE.OpenUri
         args.url = UriString
@@ -9549,11 +9549,11 @@ RETRY:
             End If
         End If
 
-        Google.GASender.GetInstance().TrackPage("/listuser_manage", tw.UserId)
+        'Google.GASender.GetInstance().TrackPage("/listuser_manage", tw.UserId)
         Using listSelectForm As New MyLists(user, Me.tw)
             listSelectForm.ShowDialog(Me)
         End Using
-        Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
+        'Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
     End Sub
 
     Private Sub SearchControls_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -9594,7 +9594,8 @@ RETRY:
     End Sub
 
     Private Sub HashManageMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HashManageMenuItem.Click, HashManageToolStripMenuItem.Click
-        Google.GASender.GetInstance().TrackPage("/hashtag_manage", tw.UserId)
+        'Google.GASender.GetInstance().TrackPage("/hashtag_manage", tw.UserId)
+
         Dim rslt As DialogResult
         Try
             rslt = HashMgr.ShowDialog()
@@ -9627,7 +9628,7 @@ RETRY:
         'End If
         _modifySettingCommon = True
         Me.StatusText_TextChanged(Nothing, Nothing)
-        Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
+        'Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
     End Sub
 
     Private Sub HashToggleMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HashToggleMenuItem.Click, HashToggleToolStripMenuItem.Click
@@ -9859,10 +9860,10 @@ RETRY:
         Using userinfo As New ShowUserInfo()
             userinfo.Owner = Me
             userinfo.User = user
-            Google.GASender.GetInstance().TrackPage("/user_profile", tw.UserId)
+            'Google.GASender.GetInstance().TrackPage("/user_profile", tw.UserId)
             userinfo.ShowDialog(Me)
             Me.Activate()
-            Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
+            'Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
         End Using
     End Sub
 
@@ -10227,11 +10228,11 @@ RETRY:
 #End Region
 
     Private Sub ListManageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListManageToolStripMenuItem.Click
-        Google.GASender.GetInstance().TrackPage("/list_manage", tw.UserId)
+        'Google.GASender.GetInstance().TrackPage("/list_manage", tw.UserId)
         Using form As New ListManage(tw)
             form.ShowDialog(Me)
         End Using
-        Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
+        'Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
     End Sub
 
     Public WriteOnly Property ModifySettingCommon() As Boolean
@@ -10646,7 +10647,7 @@ RETRY:
                 StatusLabel.Text = msg
             End If
         End If
-        Google.GASender.GetInstance().TrackEventWithCategory("post", "translation", tw.UserId)
+        'Google.GASender.GetInstance().TrackEventWithCategory("post", "translation", tw.UserId)
     End Sub
 
     Private Sub TranslationToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TranslationToolStripMenuItem.Click
@@ -10757,9 +10758,10 @@ RETRY:
         Me.StatusText_TextChanged(Nothing, Nothing)
     End Sub
 
-    Private Sub Ga_Sent() Handles Ga.Sent
-        Me._modifySettingCommon = True
-    End Sub
+    'Private Sub Ga_Sent() Handles Ga.Sent
+    '    Me._modifySettingCommon = True
+    'End Sub
+
     'Sourceをコピー
     Private Sub SourceCopyMenuItem_Click(sender As Object, e As System.EventArgs) Handles SourceCopyMenuItem.Click
         Dim selText As String = SourceLinkLabel.Text
@@ -10886,7 +10888,27 @@ RETRY:
 
         If e.Button = Windows.Forms.MouseButtons.Right Then
 
-            HashMgr.ShowDialog()
+            Dim rslt As DialogResult
+            Try
+                rslt = HashMgr.ShowDialog()
+            Catch ex As Exception
+                Exit Sub
+            End Try
+
+            Me.TopMost = SettingDialog.AlwaysTop
+            If rslt = Windows.Forms.DialogResult.Cancel Then Exit Sub
+            If HashMgr.UseHash <> "" Then
+                HashStripSplitButton.Text = HashMgr.UseHash
+                HashToggleMenuItem.Checked = True
+                HashToggleToolStripMenuItem.Checked = True
+            Else
+                HashStripSplitButton.Text = "#[-]"
+                HashToggleMenuItem.Checked = False
+                HashToggleToolStripMenuItem.Checked = False
+            End If
+            _modifySettingCommon = True
+            Me.StatusText_TextChanged(Nothing, Nothing)
+
 
         End If
     End Sub
