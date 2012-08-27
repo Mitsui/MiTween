@@ -10926,6 +10926,14 @@ RETRY:
     End Sub
     'タブにカーソルが止まると、タブにフォーカスを移す(タブスクロール用)
     Private Sub ListTab_MouseHover(sender As Object, e As System.EventArgs) Handles ListTab.MouseHover
-        Me.ListTab.Focus()
+        
+            Me.ListTab.Focus()
+
     End Sub
+    'タブからカーソルを外した時、TLにフォーカスを移す
+    Private Sub ListTab_MouseLeave(sender As Object, e As System.EventArgs) Handles ListTab.MouseLeave
+        Me.SelectNextControl(Me.ActiveControl, True, True, True, True)
+
+    End Sub
+
 End Class

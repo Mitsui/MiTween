@@ -150,7 +150,8 @@ Public Class Thumbnail
         AddHandler Owner.PreviewScrollBar.Scroll, AddressOf PreviewScrollBar_Scroll
         AddHandler Owner.PreviewPicture.MouseLeave, AddressOf PreviewPicture_MouseLeave
         AddHandler Owner.PreviewPicture.DoubleClick, AddressOf PreviewPicture_DoubleClick
-        AddHandler Owner.PreviewPicture.Click, AddressOf PreviewPicture_Click
+        'AddHandler Owner.PreviewPicture.Click, AddressOf PreviewPicture_Click
+        AddHandler Owner.PreviewPicture.MouseClick, AddressOf PreviewPicture_MouseClick
     End Sub
 
     Private ReadOnly Property _curPost As PostClass
@@ -363,6 +364,14 @@ Public Class Thumbnail
     Private Sub PreviewPicture_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         PictureViewer.PictureBox1.Image = Owner.PreviewPicture.Image
         PictureViewer.ShowDialog()
+    End Sub
+    Private Sub PreviewPicture_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
+        If e.Button = MouseButtons.Right Then
+
+            PictureViewer.PictureBox1.Image = Owner.PreviewPicture.Image
+            PictureViewer.ShowDialog()
+
+        End If
     End Sub
     Public Sub OpenPicture()
         If _prev IsNot Nothing Then
