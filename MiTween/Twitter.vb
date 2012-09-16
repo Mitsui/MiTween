@@ -1698,18 +1698,20 @@ Public Class Twitter
             If retweeted.Geo IsNot Nothing Then post.PostGeo = New PostClass.StatusGeo() With {.Lat = retweeted.Geo.Coordinates(0), .Lng = retweeted.Geo.Coordinates(1)}
 
             '以下、ユーザー情報
+
+            'RT
             Dim user As TwitterDataModel.User = retweeted.User
 
             If user.ScreenName Is Nothing OrElse status.User.ScreenName Is Nothing Then Return Nothing
 
             post.UserId = user.Id
-            post.ScreenName = user.ScreenName
+            post.ScreenName = "@" + user.ScreenName
             post.Nickname = user.Name.Trim()
             post.ImageUrl = user.ProfileImageUrl
             post.IsProtect = user.Protected
 
             'Retweetした人
-            post.RetweetedBy = status.User.ScreenName
+            post.RetweetedBy = "@" + status.User.ScreenName
             post.RetweetedByUserId = status.User.Id
             post.IsMe = post.RetweetedBy.ToLower.Equals(_uname)
         Else
@@ -1726,12 +1728,13 @@ Public Class Twitter
             If status.Geo IsNot Nothing Then post.PostGeo = New PostClass.StatusGeo() With {.Lat = status.Geo.Coordinates(0), .Lng = status.Geo.Coordinates(1)}
 
             '以下、ユーザー情報
+            '通常,メンション
             Dim user As TwitterDataModel.User = status.User
 
             If user.ScreenName Is Nothing Then Return Nothing
 
             post.UserId = user.Id
-            post.ScreenName = user.ScreenName
+            post.ScreenName = "@" + user.ScreenName
             post.Nickname = user.Name.Trim()
             post.ImageUrl = user.ProfileImageUrl
             post.IsProtect = user.Protected
@@ -2312,7 +2315,7 @@ Public Class Twitter
                 End If
 
                 post.UserId = user.Id
-                post.ScreenName = user.ScreenName
+                post.ScreenName = "@" + user.ScreenName
                 post.Nickname = user.Name.Trim()
                 post.ImageUrl = user.ProfileImageUrl
                 post.IsProtect = user.Protected
@@ -2468,7 +2471,7 @@ Public Class Twitter
                     '以下、ユーザー情報
                     Dim user As TwitterDataModel.User = retweeted.User
                     post.UserId = user.Id
-                    post.ScreenName = user.ScreenName
+                    post.ScreenName = "@" + user.ScreenName
                     post.Nickname = user.Name.Trim()
                     post.ImageUrl = user.ProfileImageUrl
                     post.IsProtect = user.Protected
@@ -2493,7 +2496,7 @@ Public Class Twitter
                     '以下、ユーザー情報
                     Dim user As TwitterDataModel.User = status.User
                     post.UserId = user.Id
-                    post.ScreenName = user.ScreenName
+                    post.ScreenName = "@" + user.ScreenName
                     post.Nickname = user.Name.Trim()
                     post.ImageUrl = user.ProfileImageUrl
                     post.IsProtect = user.Protected

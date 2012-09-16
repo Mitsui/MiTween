@@ -1071,7 +1071,7 @@ Public Class TweenMain
 
         StatusLabel.Text = My.Resources.Form1_LoadText1     '画面右下の状態表示を変更
         StatusLabelUrl.Text = ""                            '画面左下のリンク先URL表示部を初期化
-        NameLabel.Text = ""                                 '発言詳細部名前ラベル初期化
+        NameTextBox.Text = ""                                 '発言詳細部名前ラベル初期化
         DateTimeLabel.Text = ""                             '発言詳細部日時ラベル初期化
         SourceLinkLabel.Text = ""                           'Source部分初期化
 
@@ -1690,7 +1690,7 @@ Public Class TweenMain
             Item.SubItems(5).Text = ""
         Else
             fnt = _fntUnread
-            Item.SubItems(5).Text = "★"
+            Item.SubItems(5).Text = "●"
         End If
         '文字色
         Dim cl As Color
@@ -5072,16 +5072,16 @@ RETRY:
         SourceLinkLabel.TabStop = False
 
         If _statuses.Tabs(_curTab.Text).TabType = TabUsageType.DirectMessage AndAlso Not _curPost.IsOwl Then
-            NameLabel.Text = "DM TO -> "
+            NameTextBox.Text = "DM TO -> "
         ElseIf _statuses.Tabs(_curTab.Text).TabType = TabUsageType.DirectMessage Then
-            NameLabel.Text = "DM FROM <- "
+            NameTextBox.Text = "DM FROM <- "
         Else
-            NameLabel.Text = ""
+            NameTextBox.Text = ""
         End If
-        NameLabel.Text += _curPost.ScreenName + "/" + _curPost.Nickname
-        NameLabel.Tag = _curPost.ScreenName
+        NameTextBox.Text += _curPost.Nickname + "/" + _curPost.ScreenName
+        NameTextBox.Tag = _curPost.ScreenName
         If Not String.IsNullOrEmpty(_curPost.RetweetedBy) Then
-            NameLabel.Text += " (RT:" + _curPost.RetweetedBy + ")"
+            NameTextBox.Text += " (RT:" + _curPost.RetweetedBy + ")"
         End If
         If UserPicture.Image IsNot Nothing Then UserPicture.Image.Dispose()
         If Not String.IsNullOrEmpty(_curPost.ImageUrl) AndAlso TIconDic(_curPost.ImageUrl) IsNot Nothing Then
@@ -5094,11 +5094,11 @@ RETRY:
             UserPicture.Image = Nothing
         End If
 
-        NameLabel.ForeColor = System.Drawing.SystemColors.ControlText
+        NameTextBox.ForeColor = System.Drawing.SystemColors.ControlText
         DateTimeLabel.Text = _curPost.CreatedAt.ToString()
-        If _curPost.IsOwl AndAlso (SettingDialog.OneWayLove OrElse _statuses.Tabs(_curTab.Text).TabType = TabUsageType.DirectMessage) Then NameLabel.ForeColor = _clOWL
-        If _curPost.RetweetedId > 0 Then NameLabel.ForeColor = _clRetweet
-        If _curPost.IsFav Then NameLabel.ForeColor = _clFav
+        If _curPost.IsOwl AndAlso (SettingDialog.OneWayLove OrElse _statuses.Tabs(_curTab.Text).TabType = TabUsageType.DirectMessage) Then NameTextBox.ForeColor = _clOWL
+        If _curPost.RetweetedId > 0 Then NameTextBox.ForeColor = _clRetweet
+        If _curPost.IsFav Then NameTextBox.ForeColor = _clFav
 
         If DumpPostClassToolStripMenuItem.Checked Then
             Dim sb As New StringBuilder(512)
@@ -7984,8 +7984,8 @@ RETRY:
             Me.SaveIconPictureToolStripMenuItem.Enabled = False
             Me.IconNameToolStripMenuItem.Text = My.Resources.ContextMenuStrip3_OpeningText2
         End If
-        If NameLabel.Tag IsNot Nothing Then
-            Dim id As String = DirectCast(NameLabel.Tag, String)
+        If NameTextBox.Tag IsNot Nothing Then
+            Dim id As String = DirectCast(NameTextBox.Tag, String)
             If id = tw.Username Then
                 FollowToolStripMenuItem.Enabled = False
                 UnFollowToolStripMenuItem.Enabled = False
@@ -9876,8 +9876,8 @@ RETRY:
     End Sub
 
     Private Sub FollowToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FollowToolStripMenuItem.Click
-        If NameLabel.Tag IsNot Nothing Then
-            Dim id As String = DirectCast(NameLabel.Tag, String)
+        If NameTextBox.Tag IsNot Nothing Then
+            Dim id As String = DirectCast(NameTextBox.Tag, String)
             If id <> tw.Username Then
                 FollowCommand(id)
             End If
@@ -9885,8 +9885,8 @@ RETRY:
     End Sub
 
     Private Sub UnFollowToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnFollowToolStripMenuItem.Click
-        If NameLabel.Tag IsNot Nothing Then
-            Dim id As String = DirectCast(NameLabel.Tag, String)
+        If NameTextBox.Tag IsNot Nothing Then
+            Dim id As String = DirectCast(NameTextBox.Tag, String)
             If id <> tw.Username Then
                 RemoveCommand(id, False)
             End If
@@ -9894,8 +9894,8 @@ RETRY:
     End Sub
 
     Private Sub ShowFriendShipToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShowFriendShipToolStripMenuItem.Click
-        If NameLabel.Tag IsNot Nothing Then
-            Dim id As String = DirectCast(NameLabel.Tag, String)
+        If NameTextBox.Tag IsNot Nothing Then
+            Dim id As String = DirectCast(NameTextBox.Tag, String)
             If id <> tw.Username Then
                 ShowFriendship(id)
             End If
@@ -9903,22 +9903,22 @@ RETRY:
     End Sub
 
     Private Sub ShowUserStatusToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShowUserStatusToolStripMenuItem.Click
-        If NameLabel.Tag IsNot Nothing Then
-            Dim id As String = DirectCast(NameLabel.Tag, String)
+        If NameTextBox.Tag IsNot Nothing Then
+            Dim id As String = DirectCast(NameTextBox.Tag, String)
             ShowUserStatus(id, False)
         End If
     End Sub
 
     Private Sub SearchPostsDetailNameToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchPostsDetailNameToolStripMenuItem.Click
-        If NameLabel.Tag IsNot Nothing Then
-            Dim id As String = DirectCast(NameLabel.Tag, String)
+        If NameTextBox.Tag IsNot Nothing Then
+            Dim id As String = DirectCast(NameTextBox.Tag, String)
             AddNewTabForUserTimeline(id)
         End If
     End Sub
 
     Private Sub SearchAtPostsDetailNameToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchAtPostsDetailNameToolStripMenuItem.Click
-        If NameLabel.Tag IsNot Nothing Then
-            Dim id As String = DirectCast(NameLabel.Tag, String)
+        If NameTextBox.Tag IsNot Nothing Then
+            Dim id As String = DirectCast(NameTextBox.Tag, String)
             AddNewTabForSearch("@" + id)
         End If
     End Sub
@@ -9997,8 +9997,8 @@ RETRY:
     End Sub
 
     Private Sub UserPicture_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UserPicture.DoubleClick
-        If NameLabel.Tag IsNot Nothing Then
-            OpenUriAsync("http://twitter.com/" + NameLabel.Tag.ToString)
+        If NameTextBox.Tag IsNot Nothing Then
+            OpenUriAsync("http://twitter.com/" + NameTextBox.Tag.ToString)
         End If
     End Sub
 
@@ -10797,7 +10797,7 @@ RETRY:
         For i As Integer = 0 To _curList.VirtualListSize - 1
 
             '未読の検出（ツイート数が多くなった時に効果あり）
-            If _curList.Items(i).SubItems.Item(5).Text = "★" Then
+            If _curList.Items(i).SubItems.Item(5).Text = "●" Then
 
                 _curList.SelectedIndices.Add(i)     '選択範囲を追加
 

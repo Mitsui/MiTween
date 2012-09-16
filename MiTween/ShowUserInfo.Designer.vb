@@ -30,8 +30,6 @@ Partial Class ShowUserInfo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.LinkLabelWeb = New System.Windows.Forms.LinkLabel()
-        Me.LabelLocation = New System.Windows.Forms.Label()
-        Me.LabelName = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.LinkLabelFollowing = New System.Windows.Forms.LinkLabel()
@@ -51,7 +49,6 @@ Partial Class ShowUserInfo
         Me.ContextMenuUserPicture = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ChangeIconToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackgroundWorkerImageLoader = New System.ComponentModel.BackgroundWorker()
-        Me.LabelScreenName = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.ContextMenuRecentPostBrowser = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -74,6 +71,9 @@ Partial Class ShowUserInfo
         Me.ButtonBlockDestroy = New System.Windows.Forms.Button()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.OpenFileDialogIcon = New System.Windows.Forms.OpenFileDialog()
+        Me.TextBoxScreenName = New System.Windows.Forms.TextBox()
+        Me.NameTextBox = New System.Windows.Forms.TextBox()
+        Me.LocationTextBox = New System.Windows.Forms.TextBox()
         CType(Me.UserPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuUserPicture.SuspendLayout()
         Me.ContextMenuRecentPostBrowser.SuspendLayout()
@@ -115,20 +115,6 @@ Partial Class ShowUserInfo
         Me.LinkLabelWeb.Name = "LinkLabelWeb"
         Me.LinkLabelWeb.TabStop = True
         Me.LinkLabelWeb.UseMnemonic = False
-        '
-        'LabelLocation
-        '
-        Me.LabelLocation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.LabelLocation, "LabelLocation")
-        Me.LabelLocation.Name = "LabelLocation"
-        Me.LabelLocation.UseMnemonic = False
-        '
-        'LabelName
-        '
-        Me.LabelName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        resources.ApplyResources(Me.LabelName, "LabelName")
-        Me.LabelName.Name = "LabelName"
-        Me.LabelName.UseMnemonic = False
         '
         'Label5
         '
@@ -235,13 +221,6 @@ Partial Class ShowUserInfo
         '
         'BackgroundWorkerImageLoader
         '
-        '
-        'LabelScreenName
-        '
-        Me.LabelScreenName.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.LabelScreenName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        resources.ApplyResources(Me.LabelScreenName, "LabelScreenName")
-        Me.LabelScreenName.Name = "LabelScreenName"
         '
         'ToolTip1
         '
@@ -379,12 +358,40 @@ Partial Class ShowUserInfo
         '
         Me.OpenFileDialogIcon.FileName = "OpenFileDialog1"
         '
+        'TextBoxScreenName
+        '
+        Me.TextBoxScreenName.BackColor = System.Drawing.SystemColors.Window
+        Me.TextBoxScreenName.CausesValidation = False
+        resources.ApplyResources(Me.TextBoxScreenName, "TextBoxScreenName")
+        Me.TextBoxScreenName.Name = "TextBoxScreenName"
+        Me.TextBoxScreenName.ReadOnly = True
+        '
+        'NameTextBox
+        '
+        Me.NameTextBox.BackColor = System.Drawing.SystemColors.Window
+        Me.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.NameTextBox.CausesValidation = False
+        resources.ApplyResources(Me.NameTextBox, "NameTextBox")
+        Me.NameTextBox.Name = "NameTextBox"
+        Me.NameTextBox.ReadOnly = True
+        '
+        'LocationTextBox
+        '
+        Me.LocationTextBox.BackColor = System.Drawing.SystemColors.Window
+        Me.LocationTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        resources.ApplyResources(Me.LocationTextBox, "LocationTextBox")
+        Me.LocationTextBox.Name = "LocationTextBox"
+        Me.LocationTextBox.ReadOnly = True
+        '
         'ShowUserInfo
         '
         Me.AllowDrop = True
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.ButtonClose
+        Me.Controls.Add(Me.LocationTextBox)
+        Me.Controls.Add(Me.NameTextBox)
+        Me.Controls.Add(Me.TextBoxScreenName)
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.ButtonBlockDestroy)
         Me.Controls.Add(Me.ButtonReportSpam)
@@ -402,7 +409,6 @@ Partial Class ShowUserInfo
         Me.Controls.Add(Me.UserPicture)
         Me.Controls.Add(Me.LabelIsVerified)
         Me.Controls.Add(Me.DescriptionBrowser)
-        Me.Controls.Add(Me.LabelScreenName)
         Me.Controls.Add(Me.LabelRecentPost)
         Me.Controls.Add(Me.LinkLabelFav)
         Me.Controls.Add(Me.Label9)
@@ -416,39 +422,35 @@ Partial Class ShowUserInfo
         Me.Controls.Add(Me.ButtonUnFollow)
         Me.Controls.Add(Me.LinkLabelFollowing)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.LabelName)
         Me.Controls.Add(Me.ButtonFollow)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.LabelLocation)
         Me.Controls.Add(Me.LinkLabelWeb)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ButtonClose)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
+        Me.MaximizeBox = false
+        Me.MinimizeBox = false
         Me.Name = "ShowUserInfo"
-        Me.ShowIcon = False
-        Me.ShowInTaskbar = False
-        Me.TopMost = True
-        CType(Me.UserPicture, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ContextMenuUserPicture.ResumeLayout(False)
-        Me.ContextMenuRecentPostBrowser.ResumeLayout(False)
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.ShowIcon = false
+        Me.ShowInTaskbar = false
+        Me.TopMost = true
+        CType(Me.UserPicture,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ContextMenuUserPicture.ResumeLayout(false)
+        Me.ContextMenuRecentPostBrowser.ResumeLayout(false)
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents ButtonClose As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents LinkLabelWeb As System.Windows.Forms.LinkLabel
-    Friend WithEvents LabelLocation As System.Windows.Forms.Label
-    Friend WithEvents LabelName As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents LinkLabelFollowing As System.Windows.Forms.LinkLabel
@@ -466,7 +468,6 @@ Partial Class ShowUserInfo
     Friend WithEvents LabelIsFollowed As System.Windows.Forms.Label
     Friend WithEvents UserPicture As System.Windows.Forms.PictureBox
     Friend WithEvents BackgroundWorkerImageLoader As System.ComponentModel.BackgroundWorker
-    Friend WithEvents LabelScreenName As System.Windows.Forms.Label
     Friend WithEvents DescriptionBrowser As System.Windows.Forms.WebBrowser
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents ContextMenuRecentPostBrowser As System.Windows.Forms.ContextMenuStrip
@@ -491,4 +492,7 @@ Partial Class ShowUserInfo
     Friend WithEvents ButtonReportSpam As System.Windows.Forms.Button
     Friend WithEvents ButtonBlockDestroy As System.Windows.Forms.Button
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
+    Friend WithEvents TextBoxScreenName As System.Windows.Forms.TextBox
+    Friend WithEvents NameTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents LocationTextBox As System.Windows.Forms.TextBox
 End Class

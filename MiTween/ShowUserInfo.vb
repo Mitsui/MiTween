@@ -139,10 +139,10 @@ Public Class ShowUserInfo
         InitTooltip()
         Me.Text = Me.Text.Insert(0, _info.ScreenName + " ")
         LabelId.Text = _info.Id.ToString
-        LabelScreenName.Text = _info.ScreenName
-        LabelName.Text = _info.Name
+        TextBoxScreenName.Text = _info.ScreenName
+        NameTextBox.Text = _info.Name
 
-        LabelLocation.Text = _info.Location
+        LocationTextBox.Text = _info.Location
 
         SetLinklabelWeb(_info.Url)
 
@@ -446,7 +446,7 @@ Public Class ShowUserInfo
             MessageBox.Show(res)
         End If
     End Sub
-
+    'プロフィールの編集ボタンをクリック
     Private Sub ButtonEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonEdit.Click
         Static IsEditing As Boolean = False
         Static ButtonEditText As String = ""
@@ -459,25 +459,25 @@ Public Class ShowUserInfo
             ButtonEdit.Text = My.Resources.UserInfoButtonEdit_ClickText1
 
             '座標初期化,プロパティ設定
-            TextBoxName.Location = LabelName.Location
-            TextBoxName.Height = LabelName.Height
-            TextBoxName.Width = LabelName.Width
+            TextBoxName.Location = NameTextBox.Location
+            TextBoxName.Height = NameTextBox.Height
+            TextBoxName.Width = NameTextBox.Width
             TextBoxName.BackColor = MyOwner.InputBackColor
             TextBoxName.MaxLength = 20
-            TextBoxName.Text = LabelName.Text
+            TextBoxName.Text = NameTextBox.Text
             TextBoxName.TabStop = True
             TextBoxName.Visible = True
-            LabelName.Visible = False
+            NameTextBox.Visible = False
 
-            TextBoxLocation.Location = LabelLocation.Location
-            TextBoxLocation.Height = LabelLocation.Height
-            TextBoxLocation.Width = LabelLocation.Width
+            TextBoxLocation.Location = LocationTextBox.Location
+            TextBoxLocation.Height = LocationTextBox.Height
+            TextBoxLocation.Width = LocationTextBox.Width
             TextBoxLocation.BackColor = MyOwner.InputBackColor
             TextBoxLocation.MaxLength = 30
-            TextBoxLocation.Text = LabelLocation.Text
+            TextBoxLocation.Text = LocationTextBox.Text
             TextBoxLocation.TabStop = True
             TextBoxLocation.Visible = True
-            LabelLocation.Visible = False
+            LocationTextBox.Visible = False
 
             TextBoxWeb.Location = LinkLabelWeb.Location
             TextBoxWeb.Height = LinkLabelWeb.Height
@@ -531,17 +531,17 @@ Public Class ShowUserInfo
             End If
 
 
-            LabelName.Text = TextBoxName.Text
-            _info.Name = LabelName.Text
+            NameTextBox.Text = TextBoxName.Text
+            _info.Name = NameTextBox.Text
             TextBoxName.TabStop = False
             TextBoxName.Visible = False
-            LabelName.Visible = True
+            NameTextBox.Visible = True
 
-            LabelLocation.Text = TextBoxLocation.Text
-            _info.Location = LabelLocation.Text
+            LocationTextBox.Text = TextBoxLocation.Text
+            _info.Location = LocationTextBox.Text
             TextBoxLocation.TabStop = False
             TextBoxLocation.Visible = False
-            LabelLocation.Visible = True
+            LocationTextBox.Visible = True
 
             SetLinklabelWeb(TextBoxWeb.Text)
             _info.Url = TextBoxWeb.Text
