@@ -1,5 +1,5 @@
 ﻿MiTweenは、Tweenを改造した @Mitsui3Tweet3 のための Twitterクライアント
-変更しないといけないところが多々ありますが、少しずつ作業していきます。
+ご利用は、自己責任でお願いします。
 ダウンロード先　https://github.com/Mitsui/MiTween/downloads
 
 更新履歴
