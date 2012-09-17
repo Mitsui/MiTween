@@ -9608,10 +9608,12 @@ RETRY:
             HashStripSplitButton.Text = HashMgr.UseHash
             HashToggleMenuItem.Checked = True
             HashToggleToolStripMenuItem.Checked = True
+            HashStripSplitButton.ForeColor = Color.Red
         Else
             HashStripSplitButton.Text = "#[-]"
             HashToggleMenuItem.Checked = False
             HashToggleToolStripMenuItem.Checked = False
+            HashStripSplitButton.ForeColor = SystemColors.ControlText
         End If
         'If HashMgr.IsInsert AndAlso HashMgr.UseHash <> "" Then
         '    Dim sidx As Integer = StatusText.SelectionStart
@@ -9630,24 +9632,22 @@ RETRY:
         Me.StatusText_TextChanged(Nothing, Nothing)
         'Google.GASender.GetInstance().TrackPage("/home_timeline", tw.UserId)
     End Sub
-
-    Private Sub HashToggleMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HashToggleMenuItem.Click, HashToggleToolStripMenuItem.Click
+    'ハッシュタグ自動付加
+    Private Sub HashToggleMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HashToggleMenuItem.Click, HashToggleToolStripMenuItem.Click, HashStripSplitButton.ButtonClick
         HashMgr.ToggleHash()
         If HashMgr.UseHash <> "" Then
             HashStripSplitButton.Text = HashMgr.UseHash
             HashToggleMenuItem.Checked = True
             HashToggleToolStripMenuItem.Checked = True
+            HashStripSplitButton.ForeColor = Color.Red
         Else
             HashStripSplitButton.Text = "#[-]"
             HashToggleMenuItem.Checked = False
             HashToggleToolStripMenuItem.Checked = False
+            HashStripSplitButton.ForeColor = SystemColors.ControlText
         End If
         _modifySettingCommon = True
         Me.StatusText_TextChanged(Nothing, Nothing)
-    End Sub
-
-    Private Sub HashStripSplitButton_ButtonClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles HashStripSplitButton.ButtonClick
-        HashToggleMenuItem_Click(Nothing, Nothing)
     End Sub
 
     Private Sub MenuItemOperate_DropDownOpening(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItemOperate.DropDownOpening
@@ -10888,27 +10888,7 @@ RETRY:
 
         If e.Button = Windows.Forms.MouseButtons.Right Then
 
-            Dim rslt As DialogResult
-            Try
-                rslt = HashMgr.ShowDialog()
-            Catch ex As Exception
-                Exit Sub
-            End Try
-
-            Me.TopMost = SettingDialog.AlwaysTop
-            If rslt = Windows.Forms.DialogResult.Cancel Then Exit Sub
-            If HashMgr.UseHash <> "" Then
-                HashStripSplitButton.Text = HashMgr.UseHash
-                HashToggleMenuItem.Checked = True
-                HashToggleToolStripMenuItem.Checked = True
-            Else
-                HashStripSplitButton.Text = "#[-]"
-                HashToggleMenuItem.Checked = False
-                HashToggleToolStripMenuItem.Checked = False
-            End If
-            _modifySettingCommon = True
-            Me.StatusText_TextChanged(Nothing, Nothing)
-
+            HashManageMenuItem_Click(Nothing, Nothing)
 
         End If
     End Sub

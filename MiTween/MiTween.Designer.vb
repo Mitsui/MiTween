@@ -406,9 +406,11 @@ Partial Class TweenMain
         'HashStripSplitButton
         '
         Me.HashStripSplitButton.AutoToolTip = False
+        Me.HashStripSplitButton.BackColor = System.Drawing.SystemColors.Control
         Me.HashStripSplitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.HashStripSplitButton.DropDown = Me.ContextMenuPostMode
         Me.HashStripSplitButton.DropDownButtonWidth = 13
+        Me.HashStripSplitButton.ForeColor = System.Drawing.SystemColors.ControlText
         Me.HashStripSplitButton.Name = "HashStripSplitButton"
         resources.ApplyResources(Me.HashStripSplitButton, "HashStripSplitButton")
         '
@@ -416,7 +418,6 @@ Partial Class TweenMain
         '
         Me.ContextMenuPostMode.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItemUrlMultibyteSplit, Me.ToolStripMenuItemApiCommandEvasion, Me.ToolStripMenuItemUrlAutoShorten, Me.IdeographicSpaceToSpaceToolStripMenuItem, Me.MultiLineMenuItem, Me.ToolStripFocusLockMenuItem, Me.ToolStripSeparator35, Me.ImageSelectMenuItem, Me.ToolStripSeparator8, Me.HashToggleMenuItem, Me.HashManageMenuItem})
         Me.ContextMenuPostMode.Name = "ContextMenuStripPostMode"
-        Me.ContextMenuPostMode.OwnerItem = Me.HashStripSplitButton
         resources.ApplyResources(Me.ContextMenuPostMode, "ContextMenuPostMode")
         '
         'ToolStripMenuItemUrlMultibyteSplit
@@ -482,6 +483,7 @@ Partial Class TweenMain
         '
         'HashManageMenuItem
         '
+        Me.HashManageMenuItem.BackColor = System.Drawing.SystemColors.Control
         Me.HashManageMenuItem.Name = "HashManageMenuItem"
         resources.ApplyResources(Me.HashManageMenuItem, "HashManageMenuItem")
         '
