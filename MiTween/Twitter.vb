@@ -1738,7 +1738,7 @@ Public Class Twitter
             post.Nickname = user.Name.Trim()
             post.ImageUrl = user.ProfileImageUrl
             post.IsProtect = user.Protected
-            post.IsMe = post.ScreenName.ToLower.Equals(_uname)
+            post.IsMe = post.ScreenName.ToLower.Equals("@" + _uname)
 
             '幻覚fav対策
             Dim tc As TabClass = TabInformations.GetInstance.GetTabByType(TabUsageType.Favorites)

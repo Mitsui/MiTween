@@ -503,14 +503,6 @@ Public Class HttpConnectionOAuth
         Me.tokenSecret = accessTokenSecret
         Me.userIdentKey = userIdentifier
         Me.userIdIdentKey = userIdIdentifier
-
-        '自分用に変更
-        'Me.consumerKey = "G3Fi1zjL5GwPYt8wnCDOw"
-        'Me.consumerSecret = "1mUlxmoavOnVDdchIowr8WnK26hqvZGSXkKqkdp0"
-        'Me.token = "214953143-0xfXB9vWzQ2uq9o2IrVHhnsu28v4NdJWB5NioS2j"
-        'Me.tokenSecret = "vuWIeMgy0DI4uwlH19dxoI0Eu4VeH3wKB1lneanFpU"
-        'Me.userIdentKey = userIdentifier
-        'Me.userIdIdentKey = userIdIdentifier
     End Sub
 
     '''<summary>

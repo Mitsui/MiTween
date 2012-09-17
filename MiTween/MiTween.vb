@@ -6771,7 +6771,7 @@ RETRY:
                     '空の場合
 
                     ' ステータステキストが入力されていない場合先頭に@ユーザー名を追加する
-                    StatusText.Text = "@" + _curPost.ScreenName + " "
+                    StatusText.Text = _curPost.ScreenName + " "
                     If _curPost.RetweetedId > 0 Then
                         _reply_to_id = _curPost.RetweetedId
                     Else
@@ -6783,7 +6783,7 @@ RETRY:
 
                     If isAuto Then
                         '1件選んでEnter or DoubleClick
-                        If StatusText.Text.Contains("@" + _curPost.ScreenName + " ") Then
+                        If StatusText.Text.Contains(_curPost.ScreenName + " ") Then
                             If _reply_to_id > 0 AndAlso _reply_to_name = _curPost.ScreenName Then
                                 '返信先書き換え
                                 If _curPost.RetweetedId > 0 Then
@@ -6799,12 +6799,12 @@ RETRY:
                             '文頭＠以外
                             If StatusText.Text.StartsWith(". ") Then
                                 ' 複数リプライ
-                                StatusText.Text = StatusText.Text.Insert(2, "@" + _curPost.ScreenName + " ")
+                                StatusText.Text = StatusText.Text.Insert(2, _curPost.ScreenName + " ")
                                 _reply_to_id = 0
                                 _reply_to_name = ""
                             Else
                                 ' 単独リプライ
-                                StatusText.Text = "@" + _curPost.ScreenName + " " + StatusText.Text
+                                StatusText.Text = _curPost.ScreenName + " " + StatusText.Text
                                 If _curPost.RetweetedId > 0 Then
                                     _reply_to_id = _curPost.RetweetedId
                                 Else
@@ -6815,7 +6815,7 @@ RETRY:
                         Else
                             '文頭＠
                             ' 複数リプライ
-                            StatusText.Text = ". @" + _curPost.ScreenName + " " + StatusText.Text
+                            StatusText.Text = _curPost.ScreenName + " " + StatusText.Text
                             'StatusText.Text = "@" + _curPost.ScreenName + " " + StatusText.Text
                             _reply_to_id = 0
                             _reply_to_name = ""
@@ -6823,7 +6823,7 @@ RETRY:
                     Else
                         '1件選んでCtrl-Rの場合（返信先操作せず）
                         Dim sidx As Integer = StatusText.SelectionStart
-                        Dim id As String = "@" + _curPost.ScreenName + " "
+                        Dim id As String = _curPost.ScreenName + " "
                         If sidx > 0 Then
                             If StatusText.Text.Substring(sidx - 1, 1) <> " " Then
                                 id = " " + id
@@ -6864,8 +6864,8 @@ RETRY:
                     End If
                     For cnt As Integer = 0 To _curList.SelectedIndices.Count - 1
                         Dim post As PostClass = _statuses.Item(_curTab.Text, _curList.SelectedIndices(cnt))
-                        If Not sTxt.Contains("@" + post.ScreenName + " ") Then
-                            sTxt = sTxt.Insert(2, "@" + post.ScreenName + " ")
+                        If Not sTxt.Contains(post.ScreenName + " ") Then
+                            sTxt = sTxt.Insert(2, post.ScreenName + " ")
                             'sTxt = "@" + post.ScreenName + " " + sTxt
                         End If
                     Next
@@ -6879,19 +6879,19 @@ RETRY:
                         Dim sidx As Integer = StatusText.SelectionStart
                         For cnt As Integer = 0 To _curList.SelectedIndices.Count - 1
                             Dim post As PostClass = _statuses.Item(_curTab.Text, _curList.SelectedIndices(cnt))
-                            If Not ids.Contains("@" + post.ScreenName + " ") AndAlso _
+                            If Not ids.Contains(post.ScreenName + " ") AndAlso _
                                Not post.ScreenName.Equals(tw.Username, StringComparison.CurrentCultureIgnoreCase) Then
-                                ids += "@" + post.ScreenName + " "
+                                ids += post.ScreenName + " "
                             End If
                             If isAll Then
                                 For Each nm As String In post.ReplyToList
-                                    If Not ids.Contains("@" + nm + " ") AndAlso _
+                                    If Not ids.Contains(nm + " ") AndAlso _
                                        Not nm.Equals(tw.Username, StringComparison.CurrentCultureIgnoreCase) Then
                                         Dim m As Match = Regex.Match(post.TextFromApi, "[@＠](?<id>" + nm + ")([^a-zA-Z0-9]|$)", RegexOptions.IgnoreCase)
                                         If m.Success Then
-                                            ids += "@" + m.Result("${id}") + " "
+                                            ids += m.Result("${id}") + " "
                                         Else
-                                            ids += "@" + nm + " "
+                                            ids += nm + " "
                                         End If
                                     End If
                                 Next
@@ -6927,25 +6927,25 @@ RETRY:
                         Dim ids As String = ""
                         Dim sidx As Integer = StatusText.SelectionStart
                         Dim post As PostClass = _curPost
-                        If Not ids.Contains("@" + post.ScreenName + " ") AndAlso _
+                        If Not ids.Contains(post.ScreenName + " ") AndAlso _
                            Not post.ScreenName.Equals(tw.Username, StringComparison.CurrentCultureIgnoreCase) Then
-                            ids += "@" + post.ScreenName + " "
+                            ids += post.ScreenName + " "
                         End If
                         For Each nm As String In post.ReplyToList
-                            If Not ids.Contains("@" + nm + " ") AndAlso _
+                            If Not ids.Contains(nm + " ") AndAlso _
                                Not nm.Equals(tw.Username, StringComparison.CurrentCultureIgnoreCase) Then
                                 Dim m As Match = Regex.Match(post.TextFromApi, "[@＠](?<id>" + nm + ")([^a-zA-Z0-9]|$)", RegexOptions.IgnoreCase)
                                 If m.Success Then
-                                    ids += "@" + m.Result("${id}") + " "
+                                    ids += m.Result("${id}") + " "
                                 Else
-                                    ids += "@" + nm + " "
+                                    ids += nm + " "
                                 End If
                             End If
                         Next
                         If Not String.IsNullOrEmpty(post.RetweetedBy) Then
-                            If Not ids.Contains("@" + post.RetweetedBy + " ") AndAlso _
+                            If Not ids.Contains(post.RetweetedBy + " ") AndAlso _
                                Not post.RetweetedBy.Equals(tw.Username, StringComparison.CurrentCultureIgnoreCase) Then
-                                ids += "@" + post.RetweetedBy + " "
+                                ids += post.RetweetedBy + " "
                             End If
                         End If
                         If ids.Length = 0 Then Exit Sub
