@@ -1690,7 +1690,7 @@ Public Class TweenMain
             Item.SubItems(5).Text = ""
         Else
             fnt = _fntUnread
-            Item.SubItems(5).Text = "★"
+            Item.SubItems(5).Text = "●"
         End If
         '文字色
         Dim cl As Color
@@ -4297,7 +4297,7 @@ Public Class TweenMain
                                      Post.Nickname,
                                      If(Post.IsDeleted, "(DELETED)", Post.TextFromApi),
                                      Post.CreatedAt.ToString(SettingDialog.DateTimeFormat),
-                                     Post.ScreenName,
+                                     "@" + Post.ScreenName,
                                      "",
                                      mk.ToString(),
                                      Post.Source}
@@ -4307,7 +4307,7 @@ Public Class TweenMain
                                      Post.Nickname,
                                      If(Post.IsDeleted, "(DELETED)", Post.TextFromApi),
                                      Post.CreatedAt.ToString(SettingDialog.DateTimeFormat),
-                                     Post.ScreenName + Environment.NewLine + "(RT:" + Post.RetweetedBy + ")",
+                                     "@" + Post.ScreenName + Environment.NewLine + "(RT:@" + Post.RetweetedBy + ")",
                                      "",
                                      mk.ToString(),
                                      Post.Source}
@@ -5078,10 +5078,10 @@ RETRY:
         Else
             NameLabel.Text = ""
         End If
-        NameLabel.Text += _curPost.ScreenName + "/" + _curPost.Nickname
+        NameLabel.Text += _curPost.Nickname + "/@" + _curPost.ScreenName
         NameLabel.Tag = _curPost.ScreenName
         If Not String.IsNullOrEmpty(_curPost.RetweetedBy) Then
-            NameLabel.Text += " (RT:" + _curPost.RetweetedBy + ")"
+            NameLabel.Text += " (RT:@" + _curPost.RetweetedBy + ")"
         End If
         If UserPicture.Image IsNot Nothing Then UserPicture.Image.Dispose()
         If Not String.IsNullOrEmpty(_curPost.ImageUrl) AndAlso TIconDic(_curPost.ImageUrl) IsNot Nothing Then
@@ -10797,7 +10797,7 @@ RETRY:
         For i As Integer = 0 To _curList.VirtualListSize - 1
 
             '未読の検出（ツイート数が多くなった時に効果あり）
-            If _curList.Items(i).SubItems.Item(5).Text = "★" Then
+            If _curList.Items(i).SubItems.Item(5).Text = "●" Then
 
                 _curList.SelectedIndices.Add(i)     '選択範囲を追加
 
