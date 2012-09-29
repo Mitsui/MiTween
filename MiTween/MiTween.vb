@@ -3064,9 +3064,9 @@ Public Class TweenMain
             Next
 
             If Not rslt Then
-                StatusLabel.Text = My.Resources.DeleteStripMenuItem_ClickText3  '失敗
+                StatusLabel.Text = My.Resources.DeleteStripMenuItem_ClickText3  '削除失敗
             Else
-                StatusLabel.Text = My.Resources.DeleteStripMenuItem_ClickText4  '成功
+                StatusLabel.Text = My.Resources.DeleteStripMenuItem_ClickText4  '削除成功
             End If
 
             _itemCache = Nothing    'キャッシュ破棄

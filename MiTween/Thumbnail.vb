@@ -257,9 +257,11 @@ Public Class Thumbnail
             'Owner.SetStatusLabel("Thumbnail generated.")
         Else ' エラー
             If String.IsNullOrEmpty(AddMsg) Then
-                Owner.SetStatusLabel("can't get Thumbnail.")
+                'Owner.SetStatusLabel("can't get Thumbnail.")
+                Owner.SetStatusLabel("サムネイルが取得でしませんでした")
             Else
-                Owner.SetStatusLabel("can't get Thumbnail.(" + AddMsg + ")")
+                'Owner.SetStatusLabel("can't get Thumbnail.(" + AddMsg + ")")
+                Owner.SetStatusLabel("サムネイルが取得でしませんでした(" + AddMsg + ")")
             End If
         End If
     End Sub
