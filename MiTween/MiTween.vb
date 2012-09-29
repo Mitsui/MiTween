@@ -8841,7 +8841,7 @@ RETRY:
     Private Sub GetFollowersAllToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateFollowersMenuItem1.Click
         doGetFollowersMenu()
     End Sub
-
+    '非公式RT
     Private Sub doReTweetUnofficial()
         'RT @id:内容
         If Me.ExistCurrentPost Then
@@ -8852,22 +8852,23 @@ RETRY:
                 MessageBox.Show("Protected.")
                 Exit Sub
             End If
+
             Dim rtdata As String = _curPost.Text
             rtdata = CreateRetweetUnofficial(rtdata)
 
-            StatusText.Text = "RT @" + _curPost.ScreenName + ": " + HttpUtility.HtmlDecode(rtdata)
+            StatusText.Text = " RT @" + _curPost.ScreenName + ": " + HttpUtility.HtmlDecode(rtdata)
 
             StatusText.SelectionStart = 0
             StatusText.Focus()
         End If
     End Sub
-
+    '非公式RT
     Private Sub ReTweetStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReTweetStripMenuItem.Click, RtUnOpMenuItem.Click
         doReTweetUnofficial()
     End Sub
-
+    '公式RT
     Private Sub doReTweetOfficial(ByVal isConfirm As Boolean)
-        '公式RT
+
         If Me.ExistCurrentPost Then
             If _curPost.IsProtect Then
                 MessageBox.Show("Protected.")
@@ -8912,7 +8913,7 @@ RETRY:
             RunAsync(args)
         End If
     End Sub
-
+    '公式RT
     Private Sub ReTweetOriginalStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReTweetOriginalStripMenuItem.Click, RtOpMenuItem.Click
         doReTweetOfficial(True)
     End Sub
