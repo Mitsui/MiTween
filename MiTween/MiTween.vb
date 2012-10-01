@@ -4107,10 +4107,25 @@ Public Class TweenMain
             ShowSuplDialog(StatusText, AtIdSupl)
             If cnt <> AtIdSupl.ItemCount Then _modifySettingAtId = True
             e.Handled = True
+
         ElseIf e.KeyChar = "#" Then
+
             If Not SettingDialog.UseHashSupplement Then Exit Sub
-            ShowSuplDialog(StatusText, HashSupl)
-            e.Handled = True
+
+            '投稿エリアが空の時
+            If StatusText.Text = "" Then
+                ShowSuplDialog(StatusText, HashSupl)
+                e.Handled = True
+            Else
+
+                '#の前にスペースがある場合
+                If StatusText.Text.EndsWith(" ") Or StatusText.Text.EndsWith("　") Then
+                    ShowSuplDialog(StatusText, HashSupl)
+                    e.Handled = True
+                End If
+
+            End If
+
         End If
     End Sub
 
