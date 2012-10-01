@@ -5447,6 +5447,9 @@ RETRY:
                             ListTab.SelectedIndex = ListTab.TabPages.Count - 1
                             ListTabSelect(ListTab.TabPages(ListTab.TabPages.Count - 1))
                             Return True
+                        Case Keys.Z             'パクツイ
+                            TweetCopy()
+                            Return True
                     End Select
                 ElseIf Focused = FocusedControl.StatusText Then
                     'フォーカスStatusText
@@ -10950,6 +10953,27 @@ RETRY:
     Private Sub ListTab_MouseLeave(sender As Object, e As System.EventArgs) Handles ListTab.MouseLeave
         Me.SelectNextControl(Me.ActiveControl, True, True, True, True)
 
+    End Sub
+    'パクツイ
+    Private Sub TweetCopy()
+        'RT @id:内容
+        If Me.ExistCurrentPost Then
+            If _curPost.IsDm OrElse _
+               Not StatusText.Enabled Then Exit Sub
+
+            If _curPost.IsProtect Then
+                MessageBox.Show("Protected.")
+                Exit Sub
+            End If
+
+            Dim rtdata As String = _curPost.Text
+            rtdata = CreateRetweetUnofficial(rtdata)
+
+            StatusText.Text = HttpUtility.HtmlDecode(rtdata)
+
+            StatusText.SelectionStart = 0
+            StatusText.Focus()
+        End If
     End Sub
 
 End Class
