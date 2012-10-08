@@ -77,6 +77,7 @@ Public Class TweenMain
     Private _myStatusOnline As Boolean = False
     Private soundfileListup As Boolean = False
     Private _spaceKeyCanceler As SpaceKeyCanceler
+    Private ListTabMouseWheelFocus As String        'マウスホイールでタブを切り替える時のフォーカス保存用
 
     '設定ファイル関連
     'Private _cfg As SettingToConfig '旧
@@ -10933,25 +10934,41 @@ RETRY:
     End Sub
     'タブをマウスホイールで切り替える
     Private Sub ListTab_MouseWheel(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ListTab.MouseWheel
+
         If e.Delta > 0 Then
-            If Me.ListTab.SelectedIndex >= 1 Then
-                Me.ListTab.SelectTab(Me.ListTab.SelectedIndex - 1)
-            End If
+            GoNextTab(False)
         Else
-            If Me.ListTab.TabPages.Count - 1 > Me.ListTab.SelectedIndex Then
-                Me.ListTab.SelectTab(Me.ListTab.SelectedIndex + 1)
-            End If
+            GoNextTab(True)
         End If
+
     End Sub
     'タブにカーソルが止まると、タブにフォーカスを移す(タブスクロール用)
     Private Sub ListTab_MouseHover(sender As Object, e As System.EventArgs) Handles ListTab.MouseHover
-        
-            Me.ListTab.Focus()
+
+        If StatusText.Focused Then
+            ListTabMouseWheelFocus = "StatusText"
+
+        ElseIf Me.ListTab.SelectedTab.Controls(0).Focused Then
+            ListTabMouseWheelFocus = "ListTab"
+
+        End If
+
+        Me.ListTab.Focus()
 
     End Sub
     'タブからカーソルを外した時、TLにフォーカスを移す
     Private Sub ListTab_MouseLeave(sender As Object, e As System.EventArgs) Handles ListTab.MouseLeave
-        Me.SelectNextControl(Me.ActiveControl, True, True, True, True)
+
+        If ListTabMouseWheelFocus = "ListTab" Then
+            ListTabMouseWheelFocus = ""
+            Me.SelectNextControl(Me.ActiveControl, True, True, True, True)
+
+        ElseIf ListTabMouseWheelFocus = "StatusText" Then
+            ListTabMouseWheelFocus = ""
+            Me.SelectNextControl(Me.ActiveControl, False, True, True, True)
+
+        End If
+
 
     End Sub
     'パクツイ
