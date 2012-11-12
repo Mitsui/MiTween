@@ -77,7 +77,7 @@ Public Class TweenMain
     Private _myStatusOnline As Boolean = False
     Private soundfileListup As Boolean = False
     Private _spaceKeyCanceler As SpaceKeyCanceler
-    Private ListTabMouseWheelFocus As String        'マウスホイールでタブを切り替える時のフォーカス保存用
+    Private ListTabMouseWheelFocus As String            'マウスホイールでタブを切り替える時のフォーカス保存用
 
     '設定ファイル関連
     'Private _cfg As SettingToConfig '旧
@@ -95,50 +95,50 @@ Public Class TweenMain
 
     'サブ画面インスタンス
     Private WithEvents SettingDialog As AppendSettingDialog = AppendSettingDialog.Instance       '設定画面インスタンス
-    Private TabDialog As New TabsDialog         'タブ選択ダイアログインスタンス
-    Private SearchDialog As New SearchWord      '検索画面インスタンス
-    Private fltDialog As New FilterDialog       'フィルター編集画面
+    Private TabDialog As New TabsDialog                 'タブ選択ダイアログインスタンス
+    Private SearchDialog As New SearchWord              '検索画面インスタンス
+    Private fltDialog As New FilterDialog               'フィルター編集画面
     Private UrlDialog As New OpenURL
-    Private dialogAsShieldicon As DialogAsShieldIcon    ' シールドアイコン付きダイアログ
-    Public AtIdSupl As AtIdSupplement       '@id補助
-    Public HashSupl As AtIdSupplement       'Hashtag補助
+    Private dialogAsShieldicon As DialogAsShieldIcon    'シールドアイコン付きダイアログ
+    Public AtIdSupl As AtIdSupplement                   '@id補助
+    Public HashSupl As AtIdSupplement                   'Hashtag補助
     Public HashMgr As HashtagManage
     Private evtDialog As EventViewerDialog
 
     '表示フォント、色、アイコン
-    Private _fntUnread As Font              '未読用フォント
-    Private _clUnread As Color              '未読用文字色
-    Private _fntReaded As Font              '既読用フォント
-    Private _clReaded As Color              '既読用文字色
-    Private _clFav As Color                 'Fav用文字色
-    Private _clOWL As Color                 '片思い用文字色
-    Private _clRetweet As Color             'Retweet用文字色
-    Private _fntDetail As Font              '発言詳細部用フォント
-    Private _clDetail As Color              '発言詳細部用色
-    Private _clDetailLink As Color          '発言詳細部用リンク文字色
-    Private _clDetailBackcolor As Color     '発言詳細部用背景色
-    Private _clSelf As Color                '自分の発言用背景色
-    Private _clAtSelf As Color              '自分宛返信用背景色
-    Private _clTarget As Color              '選択発言者の他の発言用背景色
-    Private _clAtTarget As Color            '選択発言中の返信先用背景色
-    Private _clAtFromTarget As Color        '選択発言者への返信発言用背景色
-    Private _clAtTo As Color                '選択発言の唯一＠先
-    Private _clListBackcolor As Color       'リスト部通常発言背景色
-    Private _clInputBackcolor As Color      '入力欄背景色
-    Private _clInputFont As Color           '入力欄文字色
-    Private _fntInputFont As Font           '入力欄フォント
-    Private TIconDic As IDictionary(Of String, Image)           'アイコン画像リスト
-    Private NIconAt As Icon                 'At.ico             タスクトレイアイコン：通常時
-    Private NIconAtRed As Icon              'AtRed.ico          タスクトレイアイコン：通信エラー時
-    Private NIconAtSmoke As Icon            'AtSmoke.ico        タスクトレイアイコン：オフライン時
-    Private NIconRefresh(3) As Icon         'Refresh.ico        タスクトレイアイコン：更新中（アニメーション用に4種類を保持するリスト）
-    Private TabIcon As Icon                 'Tab.ico            未読のあるタブ用アイコン
-    Private MainIcon As Icon                'Main.ico           画面左上のアイコン
-    Private ReplyIcon As Icon               '5g
-    Private ReplyIconBlink As Icon          '6g
+    Private _fntUnread As Font                          '未読用フォント
+    Private _clUnread As Color                          '未読用文字色
+    Private _fntReaded As Font                          '既読用フォント
+    Private _clReaded As Color                          '既読用文字色
+    Private _clFav As Color                             'Fav用文字色
+    Private _clOWL As Color                             '片思い用文字色
+    Private _clRetweet As Color                         'Retweet用文字色
+    Private _fntDetail As Font                          '発言詳細部用フォント
+    Private _clDetail As Color                          '発言詳細部用色
+    Private _clDetailLink As Color                      '発言詳細部用リンク文字色
+    Private _clDetailBackcolor As Color                 '発言詳細部用背景色
+    Private _clSelf As Color                            '自分の発言用背景色
+    Private _clAtSelf As Color                          '自分宛返信用背景色
+    Private _clTarget As Color                          '選択発言者の他の発言用背景色
+    Private _clAtTarget As Color                        '選択発言中の返信先用背景色
+    Private _clAtFromTarget As Color                    '選択発言者への返信発言用背景色
+    Private _clAtTo As Color                            '選択発言の唯一＠先
+    Private _clListBackcolor As Color                   'リスト部通常発言背景色
+    Private _clInputBackcolor As Color                  '入力欄背景色
+    Private _clInputFont As Color                       '入力欄文字色
+    Private _fntInputFont As Font                       '入力欄フォント
+    Private TIconDic As IDictionary(Of String, Image)   'アイコン画像リスト
+    Private NIconAt As Icon                             'At.ico             タスクトレイアイコン：通常時
+    Private NIconAtRed As Icon                          'AtRed.ico          タスクトレイアイコン：通信エラー時
+    Private NIconAtSmoke As Icon                        'AtSmoke.ico        タスクトレイアイコン：オフライン時
+    Private NIconRefresh(3) As Icon                     'Refresh.ico        タスクトレイアイコン：更新中（アニメーション用に4種類を保持するリスト）
+    Private TabIcon As Icon                             'Tab.ico            未読のあるタブ用アイコン
+    Private MainIcon As Icon                            'Main.ico           画面左上のアイコン
+    Private ReplyIcon As Icon                           '5g
+    Private ReplyIconBlink As Icon                      '6g
 
     Private _anchorPost As PostClass
-    Private _anchorFlag As Boolean        'True:関連発言移動中（関連移動以外のオペレーションをするとFalseへ。Trueだとリスト背景色をアンカー発言選択中として描画）
+    Private _anchorFlag As Boolean                      'True:関連発言移動中（関連移動以外のオペレーションをするとFalseへ。Trueだとリスト背景色をアンカー発言選択中として描画）
 
     Private _history As New List(Of PostingStatus)      '発言履歴
     Private _hisIdx As Integer                          '発言履歴カレントインデックス
@@ -5234,7 +5234,7 @@ RETRY:
         StatusText
         PostBrowser
     End Enum
-
+    'ショートカットキー
     Private Function CommonKeyDown(ByVal KeyCode As System.Windows.Forms.Keys, ByVal Focused As FocusedControl, ByVal Modifier As ModifierState) As Boolean
         'リストのカーソル移動関係（上下キー、PageUp/Downに該当）
         If Focused = FocusedControl.ListTab Then
@@ -5539,6 +5539,9 @@ RETRY:
                 'フォーカスリスト
                 If Focused = FocusedControl.ListTab Then
                     Select Case KeyCode
+                        Case Keys.A
+                            AllReadList()
+                            Return True
                         Case Keys.H
                             GoTopEnd(True)
                             Return True
@@ -9965,8 +9968,7 @@ RETRY:
 
     Private Sub RtCountMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RtCountMenuItem.Click, RtCountToolStripMenuItem.Click
         If Me.ExistCurrentPost Then
-            Using _info As New FormInfo(Me, My.Resources.RtCountMenuItem_ClickText1, _
-                            AddressOf GetRetweet_DoWork)
+            Using _info As New FormInfo(Me, My.Resources.RtCountMenuItem_ClickText1, AddressOf GetRetweet_DoWork)
                 Dim retweet_count As Integer = 0
 
                 ' ダイアログ表示
@@ -10810,9 +10812,14 @@ RETRY:
             SourceUrlCopyMenuItem.Enabled = True
         End If
     End Sub
-    'メニューからすべて未読にする
+    'メニューからすべて既読にする
     Private Sub AllReadOpMenuItem_Click(sender As Object, e As System.EventArgs) Handles AllReadOpMenuItem.Click, AllReadStripMenuItem.Click
 
+        AllReadList()
+
+    End Sub
+    'メニューからすべて既読にする
+    Private Sub AllReadList()
         ' ListView上でのCtrl+A
         For i As Integer = 0 To _curList.VirtualListSize - 1
 
@@ -10825,7 +10832,7 @@ RETRY:
 
         Next
 
-        '未読にする
+        '既読にする
         _curList.BeginUpdate()
         If SettingDialog.UnreadManage Then
             For Each idx As Integer In _curList.SelectedIndices
@@ -10848,8 +10855,8 @@ RETRY:
 
         '選択解除
         _curList.SelectedIndices.Clear()
-
     End Sub
+
     '投稿エリアに、ステータスバーを情報を入力する
     Private Sub StatusLabelUrl_Click(sender As System.Object, e As System.EventArgs) Handles StatusLabelUrl.Click
         'StatusText.Text += GetStatusLabelText()        '投稿エリアにステータスバーの情報を追加
@@ -10949,6 +10956,7 @@ RETRY:
             ListTabMouseWheelFocus = "StatusText"
 
         ElseIf Me.ListTab.SelectedTab.Controls(0).Focused Then
+
             ListTabMouseWheelFocus = "ListTab"
 
         End If
