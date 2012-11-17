@@ -9107,9 +9107,9 @@ RETRY:
                 Dim arg As New FollowRemoveCommandArgs
                 arg.tw = tw
                 arg.id = inputName.TabName.Trim()
-                Using _info As New FormInfo(Me, My.Resources.FollowCommandText1, _
-                                            AddressOf FollowCommand_DoWork, _
-                                            Nothing, _
+                Using _info As New FormInfo(Me, My.Resources.FollowCommandText1,
+                                            AddressOf FollowCommand_DoWork,
+                                            Nothing,
                                             arg)
                     _info.ShowDialog()
                     Dim ret As String = DirectCast(_info.Result, String)
@@ -9158,9 +9158,9 @@ RETRY:
             End Using
         End If
 
-        Using _info As New FormInfo(Me, My.Resources.RemoveCommandText1, _
-                                    AddressOf RemoveCommand_DoWork, _
-                                    Nothing, _
+        Using _info As New FormInfo(Me, My.Resources.RemoveCommandText1,
+                                    AddressOf RemoveCommand_DoWork,
+                                    Nothing,
                                     arg)
             _info.ShowDialog()
             Dim ret As String = DirectCast(_info.Result, String)

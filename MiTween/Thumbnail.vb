@@ -79,6 +79,7 @@ Public Class Thumbnail
 #End Region
 
     End Class
+
     Private Owner As TweenMain
     Private Delegate Function UrlCreatorDelegate(ByVal args As GetUrlArgs) As Boolean
     Private Delegate Function ImageCreatorDelegate(ByVal args As CreateImageArgs) As Boolean
@@ -589,7 +590,10 @@ Public Class Thumbnail
                                       "^http://yfrog\.com/(\w+)$", RegexOptions.IgnoreCase)
         If mc.Success Then
             ' TODO 成功時はサムネイルURLを作成しimglist.Addする
-            args.imglist.Add(New KeyValuePair(Of String, String)(args.url, If(String.IsNullOrEmpty(args.extended), args.url, args.extended) + ".th.jpg"))
+            'args.imglist.Add(New KeyValuePair(Of String, String)(args.url, If(String.IsNullOrEmpty(args.extended), args.url, args.extended) + ".th.jpg"))
+            args.imglist.Add(New KeyValuePair(Of String, String)(args.url, If(String.IsNullOrEmpty(args.extended), args.url, args.extended) + ":iphone"))
+
+
             Return True
         Else
             Return False
