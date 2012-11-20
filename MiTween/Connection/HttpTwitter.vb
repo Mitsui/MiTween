@@ -66,9 +66,9 @@ Public Class HttpTwitter
     Private requestToken As String
 
     Public Sub Initialize(ByVal accessToken As String,
-                                    ByVal accessTokenSecret As String,
-                                    ByVal username As String,
-                                    ByVal userId As Long)
+                          ByVal accessTokenSecret As String,
+                          ByVal username As String,
+                          ByVal userId As Long)
         'for OAuth
         Dim con As New HttpOAuthApiProxy
         Static tk As String = ""

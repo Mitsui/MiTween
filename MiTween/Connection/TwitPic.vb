@@ -45,20 +45,21 @@ Public Class TwitPic
     Private Const ConsumerSecretKey As String = "M0IMsbl2722iWa+CGPVcNeQmE+TFpJk8B/KW9UUTk3eLOl9Ij005r52JNxVukTzM"
 
     Private Const ApiKey As String = "287b60562aea3cab9f58fa54015848e8"
-    Private pictureExt() As String = {".jpg", _
-                                    ".jpeg", _
-                                    ".gif", _
-                                    ".png"}
-    Private multimediaExt() As String = {".avi", _
-                                         ".wmv", _
-                                         ".flv", _
-                                         ".m4v", _
-                                         ".mov", _
-                                         ".mp4", _
-                                         ".rm", _
-                                         ".mpeg", _
-                                         ".mpg", _
-                                         ".3gp", _
+    Private pictureExt() As String = {".jpg",
+                                      ".jpeg",
+                                      ".gif",
+                                      ".png"}
+
+    Private multimediaExt() As String = {".avi",
+                                         ".wmv",
+                                         ".flv",
+                                         ".m4v",
+                                         ".mov",
+                                         ".mp4",
+                                         ".rm",
+                                         ".mpeg",
+                                         ".mpg",
+                                         ".3gp",
                                          ".3g2"}
 
     Private Const MaxFileSize As Long = 10 * 1024 * 1024    'Image only
@@ -69,6 +70,7 @@ Public Class TwitPic
     Public Function Upload(ByRef filePath As String,
                            ByRef message As String,
                            ByVal reply_to As Long) As String Implements IMultimediaShareService.Upload
+
         If String.IsNullOrEmpty(filePath) Then Return "Err:File isn't specified."
         If String.IsNullOrEmpty(message) Then message = ""
         Dim mediaFile As FileInfo
@@ -116,9 +118,9 @@ Public Class TwitPic
         Return tw.PostStatus(message, 0)
     End Function
 
-    Private Function UploadFile(ByVal mediaFile As FileInfo, _
-                       ByVal message As String, _
-                       ByRef content As String) As HttpStatusCode
+    Private Function UploadFile(ByVal mediaFile As FileInfo,
+                                ByVal message As String,
+                                ByRef content As String) As HttpStatusCode
 
         'Message必須
         If String.IsNullOrEmpty(message) Then message = ""
@@ -137,12 +139,12 @@ Public Class TwitPic
             Me.InstanceTimeout = 120000
         End If
 
-        Return GetContent(PostMethod, _
-                          New Uri("http://api.twitpic.com/2/upload.xml"), _
-                          param, _
-                          binary, _
-                          content, _
-                          Nothing, _
+        Return GetContent(PostMethod,
+                          New Uri("http://api.twitpic.com/2/upload.xml"),
+                          param,
+                          binary,
+                          content,
+                          Nothing,
                           Nothing)
     End Function
 
@@ -178,7 +180,7 @@ Public Class TwitPic
     End Function
 
     Public Sub New(ByVal twitter As Twitter)
-        MyBase.New(New Uri("http://api.twitter.com/"), _
+        MyBase.New(New Uri("http://api.twitter.com/"),
                    New Uri("https://api.twitter.com/1/account/verify_credentials.json"))
         tw = twitter
         Initialize(DecryptString(ConsumerKey), DecryptString(ConsumerSecretKey), tw.AccessToken, tw.AccessTokenSecret, "", "")

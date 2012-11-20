@@ -808,11 +808,11 @@ Public Class TweenMain
         'ハッシュタグ関連
         HashSupl = New AtIdSupplement(_cfgCommon.HashTags, "#")
         HashMgr = New HashtagManage(HashSupl,
-                                _cfgCommon.HashTags.ToArray,
-                                _cfgCommon.HashSelected,
-                                _cfgCommon.HashIsPermanent,
-                                _cfgCommon.HashIsHead,
-                                _cfgCommon.HashIsNotAddToAtReply)
+                                    _cfgCommon.HashTags.ToArray,
+                                    _cfgCommon.HashSelected,
+                                    _cfgCommon.HashIsPermanent,
+                                    _cfgCommon.HashIsHead,
+                                    _cfgCommon.HashIsNotAddToAtReply)
         If HashMgr.UseHash <> "" AndAlso HashMgr.IsPermanent Then HashStripSplitButton.Text = HashMgr.UseHash
 
         _initial = True
@@ -917,11 +917,11 @@ Public Class TweenMain
         End If
 
         'Twitter用通信クラス初期化
-        HttpConnection.InitializeConnection(SettingDialog.DefaultTimeOut, _
-                                            SettingDialog.SelectedProxyType, _
-                                            SettingDialog.ProxyAddress, _
-                                            SettingDialog.ProxyPort, _
-                                            SettingDialog.ProxyUser, _
+        HttpConnection.InitializeConnection(SettingDialog.DefaultTimeOut,
+                                            SettingDialog.SelectedProxyType,
+                                            SettingDialog.ProxyAddress,
+                                            SettingDialog.ProxyPort,
+                                            SettingDialog.ProxyUser,
                                             SettingDialog.ProxyPassword)
 
         tw.RestrictFavCheck = SettingDialog.RestrictFavCheck
@@ -1373,8 +1373,8 @@ Public Class TweenMain
                     Catch ex As Exception
                         'アイコン描画不具合あり？
                     End Try
-                    Me.SelectListItem(lst, _
-                                      _statuses.IndexOf(tab.Text, selId(tab.Text)), _
+                    Me.SelectListItem(lst,
+                                      _statuses.IndexOf(tab.Text, selId(tab.Text)),
                                       _statuses.IndexOf(tab.Text, focusedId(tab.Text)))
                 End If
                 lst.EndUpdate()
@@ -1840,10 +1840,9 @@ Public Class TweenMain
         Dim tmpStatus As String = StatusText.Text.Trim
         If ToolStripMenuItemApiCommandEvasion.Checked Then
             ' APIコマンド回避
-            If Regex.IsMatch(tmpStatus, _
-                "^[+\-\[\]\s\\.,*/(){}^~|='&%$#""<>?]*(get|g|fav|follow|f|on|off|stop|quit|leave|l|whois|w|nudge|n|stats|invite|track|untrack|tracks|tracking|\*)([+\-\[\]\s\\.,*/(){}^~|='&%$#""<>?]+|$)", _
-                RegexOptions.IgnoreCase) _
-               AndAlso tmpStatus.EndsWith(" .") = False Then adjustCount += 2
+            If Regex.IsMatch(tmpStatus,
+                             "^[+\-\[\]\s\\.,*/(){}^~|='&%$#""<>?]*(get|g|fav|follow|f|on|off|stop|quit|leave|l|whois|w|nudge|n|stats|invite|track|untrack|tracks|tracking|\*)([+\-\[\]\s\\.,*/(){}^~|='&%$#""<>?]+|$)",
+                             RegexOptions.IgnoreCase) AndAlso tmpStatus.EndsWith(" .") = False Then adjustCount += 2
         End If
 
         If ToolStripMenuItemUrlMultibyteSplit.Checked Then
@@ -1913,9 +1912,9 @@ Public Class TweenMain
 
         If ToolStripMenuItemApiCommandEvasion.Checked Then
             ' APIコマンド回避
-            If Regex.IsMatch(args.status.status, _
-                "^[+\-\[\]\s\\.,*/(){}^~|='&%$#""<>?]*(get|g|fav|follow|f|on|off|stop|quit|leave|l|whois|w|nudge|n|stats|invite|track|untrack|tracks|tracking|\*)([+\-\[\]\s\\.,*/(){}^~|='&%$#""<>?]+|$)", _
-                RegexOptions.IgnoreCase) _
+            If Regex.IsMatch(args.status.status,
+                             "^[+\-\[\]\s\\.,*/(){}^~|='&%$#""<>?]*(get|g|fav|follow|f|on|off|stop|quit|leave|l|whois|w|nudge|n|stats|invite|track|untrack|tracks|tracking|\*)([+\-\[\]\s\\.,*/(){}^~|='&%$#""<>?]+|$)",
+                             RegexOptions.IgnoreCase) _
                AndAlso args.status.status.EndsWith(" .") = False Then args.status.status += " ."
         End If
 
@@ -1951,12 +1950,11 @@ Public Class TweenMain
             If ImageSelectedPicture.Image IsNot ImageSelectedPicture.InitialImage AndAlso _
                 ImageServiceCombo.SelectedIndex > -1 AndAlso _
                 ImagefilePathText.Text <> "" Then
-                If MessageBox.Show(My.Resources.PostPictureConfirm1, _
-                                   My.Resources.PostPictureConfirm2, _
-                                   MessageBoxButtons.OKCancel, _
-                                   MessageBoxIcon.Question, _
-                                   MessageBoxDefaultButton.Button1) _
-                               = Windows.Forms.DialogResult.Cancel Then
+                If MessageBox.Show(My.Resources.PostPictureConfirm1,
+                                   My.Resources.PostPictureConfirm2,
+                                   MessageBoxButtons.OKCancel,
+                                   MessageBoxIcon.Question,
+                                   MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Cancel Then
                     TimelinePanel.Visible = True
                     TimelinePanel.Enabled = True
                     ImageSelectionPanel.Visible = False
@@ -3186,7 +3184,7 @@ Public Class TweenMain
             GetTimeline(WORKERTYPE.Timeline, 1, 0, "")
         End If
     End Sub
-
+    'もっと前を取得
     Private Sub DoRefreshMore()
         'ページ指定をマイナス1に
         If _curTab IsNot Nothing Then
@@ -3250,11 +3248,11 @@ Public Class TweenMain
                 HttpTwitter.TwitterUrl = _cfgCommon.TwitterUrl
                 HttpTwitter.TwitterSearchUrl = _cfgCommon.TwitterSearchUrl
 
-                HttpConnection.InitializeConnection(SettingDialog.DefaultTimeOut, _
-                                                    SettingDialog.SelectedProxyType, _
-                                                    SettingDialog.ProxyAddress, _
-                                                    SettingDialog.ProxyPort, _
-                                                    SettingDialog.ProxyUser, _
+                HttpConnection.InitializeConnection(SettingDialog.DefaultTimeOut,
+                                                    SettingDialog.SelectedProxyType, 
+                                                    SettingDialog.ProxyAddress,
+                                                    SettingDialog.ProxyPort,
+                                                    SettingDialog.ProxyUser,
                                                     SettingDialog.ProxyPassword)
                 Me.CreatePictureServices()
 
@@ -4663,9 +4661,9 @@ Public Class TweenMain
     '    End If
     'End Sub
 
-    Private Sub DoTabSearch(ByVal _word As String, _
-                            ByVal CaseSensitive As Boolean, _
-                            ByVal UseRegex As Boolean, _
+    Private Sub DoTabSearch(ByVal _word As String,
+                            ByVal CaseSensitive As Boolean,
+                            ByVal UseRegex As Boolean,
                             ByVal SType As SEARCHTYPE)
         Dim cidx As Integer = 0
         Dim fnd As Boolean = False
@@ -6569,28 +6567,28 @@ RETRY:
                         Dim post As PostClass = _statuses.Item(_curTab.Text, idx)
                         Dim protect As String = ""
                         If post.IsProtect Then protect = "Protect"
-                        sw.WriteLine(post.Nickname & vbTab & _
-                                 """" & post.TextFromApi.Replace(vbLf, "").Replace("""", """""") + """" & vbTab & _
-                                 post.CreatedAt.ToString() & vbTab & _
-                                 post.ScreenName & vbTab & _
-                                 post.StatusId.ToString() & vbTab & _
-                                 post.ImageUrl & vbTab & _
-                                 """" & post.Text.Replace(vbLf, "").Replace("""", """""") + """" & vbTab & _
-                                 protect)
+                        sw.WriteLine(post.Nickname & vbTab &
+                                     """" & post.TextFromApi.Replace(vbLf, "").Replace("""", """""") + """" & vbTab &
+                                     post.CreatedAt.ToString() & vbTab &
+                                     post.ScreenName & vbTab &
+                                     post.StatusId.ToString() & vbTab &
+                                     post.ImageUrl & vbTab &
+                                     """" & post.Text.Replace(vbLf, "").Replace("""", """""") + """" & vbTab &
+                                     protect)
                     Next
                 Else
                     For Each idx As Integer In _curList.SelectedIndices
                         Dim post As PostClass = _statuses.Item(_curTab.Text, idx)
                         Dim protect As String = ""
                         If post.IsProtect Then protect = "Protect"
-                        sw.WriteLine(post.Nickname & vbTab & _
-                                 """" & post.TextFromApi.Replace(vbLf, "").Replace("""", """""") + """" & vbTab & _
-                                 post.CreatedAt.ToString() & vbTab & _
-                                 post.ScreenName & vbTab & _
-                                 post.StatusId.ToString() & vbTab & _
-                                 post.ImageUrl & vbTab & _
-                                 """" & post.Text.Replace(vbLf, "").Replace("""", """""") + """" & vbTab & _
-                                 protect)
+                        sw.WriteLine(post.Nickname & vbTab &
+                                     """" & post.TextFromApi.Replace(vbLf, "").Replace("""", """""") + """" & vbTab &
+                                     post.CreatedAt.ToString() & vbTab &
+                                     post.ScreenName & vbTab &
+                                     post.StatusId.ToString() & vbTab &
+                                     post.ImageUrl & vbTab &
+                                     """" & post.Text.Replace(vbLf, "").Replace("""", """""") + """" & vbTab &
+                                     protect)
                     Next
                 End If
                 sw.Close()
@@ -8163,10 +8161,10 @@ RETRY:
                 End If
             End If
         Else
-            Const url As String = "(?<before>(?:[^\""':!=]|^|\:))" + _
-                                       "(?<url>(?<protocol>https?://)" + _
-                                       "(?<domain>(?:[\.-]|[^\p{P}\s])+\.[a-z]{2,}(?::[0-9]+)?)" + _
-                                       "(?<path>/[a-z0-9!*'();:&=+$/%#\-_.,~@]*[a-z0-9)=#/]?)?" + _
+            Const url As String = "(?<before>(?:[^\""':!=]|^|\:))" +
+                                       "(?<url>(?<protocol>https?://)" +
+                                       "(?<domain>(?:[\.-]|[^\p{P}\s])+\.[a-z]{2,}(?::[0-9]+)?)" +
+                                       "(?<path>/[a-z0-9!*'();:&=+$/%#\-_.,~@]*[a-z0-9)=#/]?)?" +
                                        "(?<query>\?[a-z0-9!*'();:&=+$/%#\-_.,~@?]*[a-z0-9_&=#/])?)"
             ' 正規表現にマッチしたURL文字列をtinyurl化
             For Each mt As Match In Regex.Matches(StatusText.Text, url, RegexOptions.IgnoreCase)
@@ -8563,9 +8561,9 @@ RETRY:
             SearchDialog.CheckCaseSensitive = False
             SearchDialog.CheckRegex = False
 
-            DoTabSearch(SearchDialog.SWord, _
-                        SearchDialog.CheckCaseSensitive, _
-                        SearchDialog.CheckRegex, _
+            DoTabSearch(SearchDialog.SWord,
+                        SearchDialog.CheckCaseSensitive,
+                        SearchDialog.CheckRegex,
                         SEARCHTYPE.NextSearch)
         End If
     End Sub
@@ -9218,9 +9216,9 @@ RETRY:
                Not String.IsNullOrEmpty(inputName.TabName.Trim()) Then
                 Dim ret As String = ""
                 args.ids.Add(New ShowFriendshipArgs.FriendshipInfo(inputName.TabName.Trim))
-                Using _info As New FormInfo(Me, My.Resources.ShowFriendshipText1, _
-                                            AddressOf ShowFriendship_DoWork, _
-                                            Nothing, _
+                Using _info As New FormInfo(Me, My.Resources.ShowFriendshipText1,
+                                            AddressOf ShowFriendship_DoWork,
+                                            Nothing,
                                             args)
                     _info.ShowDialog()
                     ret = DirectCast(_info.Result, String)
@@ -9252,9 +9250,9 @@ RETRY:
             Dim args As New ShowFriendshipArgs
             args.tw = tw
             args.ids.Add(New ShowFriendshipArgs.FriendshipInfo(id.Trim))
-            Using _info As New FormInfo(Me, My.Resources.ShowFriendshipText1, _
-                                        AddressOf ShowFriendship_DoWork, _
-                                        Nothing, _
+            Using _info As New FormInfo(Me, My.Resources.ShowFriendshipText1,
+                                        AddressOf ShowFriendship_DoWork,
+                                        Nothing,
                                         args)
                 _info.ShowDialog()
                 ret = DirectCast(_info.Result, String)
@@ -9371,7 +9369,7 @@ RETRY:
     Private Sub ToolStripFocusLockMenuItem_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripFocusLockMenuItem.Click
         _modifySettingCommon = True
     End Sub
-
+    'QT
     Private Sub doQuote()
         'QT @id:内容
         '返信先情報付加
@@ -9398,7 +9396,7 @@ RETRY:
             StatusText.Focus()
         End If
     End Sub
-
+    'QT
     Private Sub QuoteStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles QuoteStripMenuItem.Click, QtOpMenuItem.Click
         doQuote()
     End Sub
@@ -9458,9 +9456,8 @@ RETRY:
         GetTimeline(WORKERTYPE.PublicSearch, 1, 0, tbName)
         DirectCast(ListTab.SelectedTab.Tag, DetailsListView).Focus()
     End Sub
-
+    'もっと前を取得
     Private Sub RefreshMoreStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefreshMoreStripMenuItem.Click, RefreshPrevOpMenuItem.Click
-        'もっと前を取得
         DoRefreshMore()
     End Sub
 
@@ -10194,11 +10191,11 @@ RETRY:
         Dim svc As String = ""
         If ImageServiceCombo.SelectedIndex > -1 Then svc = ImageServiceCombo.SelectedItem.ToString
         ImageServiceCombo.Items.Clear()
+        ImageServiceCombo.Items.Add("Twitter")
         ImageServiceCombo.Items.Add("TwitPic")
         ImageServiceCombo.Items.Add("img.ly")
         ImageServiceCombo.Items.Add("yfrog")
         ImageServiceCombo.Items.Add("lockerz")
-        ImageServiceCombo.Items.Add("Twitter")
 
         If svc = "" Then
             ImageServiceCombo.SelectedIndex = 0
@@ -10869,34 +10866,6 @@ RETRY:
 
     Private Sub ToolStripDropDownButton1_DropDownItemClicked(sender As Object, e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ToolStripDropDownButton1.DropDownItemClicked
 
-        'ToolStripDropDownButton1.Text = tw.Username
-        'If _cfgCommon.UserAccounts.Count > 0 Then
-        '    For Each u In _cfgCommon.UserAccounts.ToArray
-        '        ToolStripDropDownButton1.DropDownItems.Add(u.Username)
-        '    Next
-        'End If
-
-        'Me.UserAccounts.Clear()
-        'For Each u In Me.AuthUserCombo.Items
-        '    Me.UserAccounts.Add(DirectCast(u, UserAccount))
-        'Next
-        'If Me.AuthUserCombo.SelectedIndex > -1 Then
-        '    For Each u In Me.UserAccounts
-        '        If u.Username.ToLower = DirectCast(Me.AuthUserCombo.SelectedItem, UserAccount).Username.ToLower Then
-        '            tw.Initialize(u.Token, u.TokenSecret, u.Username, u.UserId)
-        '            If u.UserId = 0 Then
-        '                tw.VerifyCredentials()
-        '                u.UserId = tw.UserId
-        '            End If
-        '            Google.GASender.GetInstance.SessionFirst = u.GAFirst
-        '            Google.GASender.GetInstance.SessionLast = u.GALast
-        '            Exit For
-        '        End If
-        '    Next
-        'Else
-        '    tw.ClearAuthInfo()
-        '    tw.Initialize("", "", "", 0)
-        'End If
     End Sub
 
     Private Sub ToolStripComboBox1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ToolStripComboBox1.SelectedIndexChanged

@@ -5,10 +5,10 @@ Imports System.Xml
 Public Class TwitterPhoto
     Implements IMultimediaShareService
 
-    Private pictureExt() As String = {".jpg", _
-                                ".jpeg", _
-                                ".gif", _
-                                ".png"}
+    Private pictureExt() As String = {".jpg",
+                                      ".jpeg",
+                                      ".gif",
+                                      ".png"}
 
     Private Const MaxfilesizeDefault As Int64 = 3145728
 

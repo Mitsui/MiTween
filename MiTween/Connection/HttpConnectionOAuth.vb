@@ -106,19 +106,19 @@ Public Class HttpConnectionOAuth
     '''<param name="headerInfo">[IN/OUT]HTTP応答のヘッダ情報。必要なヘッダ名を事前に設定しておくこと</param>
     '''<param name="callback">処理終了直前に呼ばれるコールバック関数のデリゲート 不要な場合はNothingを渡すこと</param>
     '''<returns>HTTP応答のステータスコード</returns>
-    Public Function GetContent(ByVal method As String, _
-            ByVal requestUri As Uri, _
-            ByVal param As Dictionary(Of String, String), _
-            ByRef content As String, _
-            ByVal headerInfo As Dictionary(Of String, String), _
-            ByVal callback As IHttpConnection.CallbackDelegate) As HttpStatusCode Implements IHttpConnection.GetContent
+    Public Function GetContent(ByVal method As String,
+                               ByVal requestUri As Uri,
+                               ByVal param As Dictionary(Of String, String),
+                               ByRef content As String,
+                               ByVal headerInfo As Dictionary(Of String, String),
+                               ByVal callback As IHttpConnection.CallbackDelegate) As HttpStatusCode Implements IHttpConnection.GetContent
         '認証済かチェック
         If String.IsNullOrEmpty(token) Then Return HttpStatusCode.Unauthorized
 
-        Dim webReq As HttpWebRequest = CreateRequest(method, _
-                                                    requestUri, _
-                                                    param, _
-                                                    False)
+        Dim webReq As HttpWebRequest = CreateRequest(method,
+                                                     requestUri,
+                                                     param,
+                                                     False)
         'OAuth認証ヘッダを付加
         AppendOAuthInfo(webReq, param, token, tokenSecret)
 
@@ -138,21 +138,21 @@ Public Class HttpConnectionOAuth
     '''<summary>
     '''バイナリアップロード
     '''</summary>
-    Public Function GetContent(ByVal method As String, _
-        ByVal requestUri As Uri, _
-        ByVal param As Dictionary(Of String, String), _
-        ByVal binary As List(Of KeyValuePair(Of String, FileInfo)), _
-        ByRef content As String, _
-        ByVal headerInfo As Dictionary(Of String, String), _
-        ByVal callback As IHttpConnection.CallbackDelegate) As HttpStatusCode Implements IHttpConnection.GetContent
+    Public Function GetContent(ByVal method As String,
+                               ByVal requestUri As Uri,
+                               ByVal param As Dictionary(Of String, String),
+                               ByVal binary As List(Of KeyValuePair(Of String, FileInfo)),
+                               ByRef content As String,
+                               ByVal headerInfo As Dictionary(Of String, String),
+                               ByVal callback As IHttpConnection.CallbackDelegate) As HttpStatusCode Implements IHttpConnection.GetContent
         '認証済かチェック
         If String.IsNullOrEmpty(token) Then Return HttpStatusCode.Unauthorized
 
-        Dim webReq As HttpWebRequest = CreateRequest(method, _
-                                                    requestUri, _
-                                                    param, _
-                                                    binary, _
-                                                    False)
+        Dim webReq As HttpWebRequest = CreateRequest(method,
+                                                     requestUri,
+                                                     param,
+                                                     binary,
+                                                     False)
         'OAuth認証ヘッダを付加
         AppendOAuthInfo(webReq, Nothing, token, tokenSecret)
 
@@ -177,11 +177,11 @@ Public Class HttpConnectionOAuth
     '''<param name="param">GET時のクエリ、またはPOST時のエンティティボディ</param>
     '''<param name="content">[OUT]HTTP応答のボディストリーム</param>
     '''<returns>HTTP応答のステータスコード</returns>
-    Public Function GetContent(ByVal method As String, _
-            ByVal requestUri As Uri, _
-            ByVal param As Dictionary(Of String, String), _
-            ByRef content As Stream,
-            ByVal userAgent As String) As HttpStatusCode Implements IHttpConnection.GetContent
+    Public Function GetContent(ByVal method As String,
+                               ByVal requestUri As Uri,
+                               ByVal param As Dictionary(Of String, String),
+                               ByRef content As Stream,
+                               ByVal userAgent As String) As HttpStatusCode Implements IHttpConnection.GetContent
         '認証済かチェック
         If String.IsNullOrEmpty(token) Then Return HttpStatusCode.Unauthorized
 
@@ -230,10 +230,10 @@ Public Class HttpConnectionOAuth
     '''<param name="requestToken">[OUT]認証要求で戻されるリクエストトークン。使い捨て</param>
     '''<param name="authUri">[OUT]requestUriを元に生成された認証用URL。通常はリクエストトークンをクエリとして付加したUri</param>
     '''<returns>取得結果真偽値</returns>
-    Public Function AuthenticatePinFlowRequest(ByVal requestTokenUrl As String, _
-                                        ByVal authorizeUrl As String, _
-                                        ByRef requestToken As String, _
-                                        ByRef authUri As Uri) As Boolean
+    Public Function AuthenticatePinFlowRequest(ByVal requestTokenUrl As String,
+                                               ByVal authorizeUrl As String,
+                                               ByRef requestToken As String,
+                                               ByRef authUri As Uri) As Boolean
         'PIN-based flow
         authUri = GetAuthenticatePageUri(requestTokenUrl, authorizeUrl, requestToken)
         If authUri Is Nothing Then Return False
@@ -250,8 +250,8 @@ Public Class HttpConnectionOAuth
     '''<param name="requestUri">AuthenticatePinFlowRequestで取得したリクエストトークン</param>
     '''<param name="pinCode">Webで認証後に表示されるPINコード</param>
     '''<returns>取得結果真偽値</returns>
-    Public Function AuthenticatePinFlow(ByVal accessTokenUrl As String, _
-                                        ByVal requestToken As String, _
+    Public Function AuthenticatePinFlow(ByVal accessTokenUrl As String,
+                                        ByVal requestToken As String,
                                         ByVal pinCode As String) As HttpStatusCode
         'PIN-based flow
         If String.IsNullOrEmpty(requestToken) Then Throw New Exception("Sequence error.(requestToken is blank)")
@@ -409,10 +409,10 @@ Public Class HttpConnectionOAuth
     '''<param name="query">OAuth追加情報＋クエリ or POSTデータ</param>
     '''<param name="token">アクセストークン、もしくはリクエストトークン。未取得なら空文字列</param>
     '''<param name="tokenSecret">アクセストークンシークレット。認証処理では空文字列</param>
-    Protected Overridable Sub AppendOAuthInfo(ByVal webRequest As HttpWebRequest, _
-                                        ByVal query As Dictionary(Of String, String), _
-                                        ByVal token As String, _
-                                        ByVal tokenSecret As String)
+    Protected Overridable Sub AppendOAuthInfo(ByVal webRequest As HttpWebRequest,
+                                              ByVal query As Dictionary(Of String, String),
+                                              ByVal token As String,
+                                              ByVal tokenSecret As String)
         'OAuth共通情報取得
         Dim parameter As Dictionary(Of String, String) = GetOAuthParameter(token)
         'OAuth共通情報にquery情報を追加
@@ -458,11 +458,11 @@ Public Class HttpConnectionOAuth
     '''<param name="uri">アクセス先Uri</param>
     '''<param name="parameter">クエリ、もしくはPOSTデータ</param>
     '''<returns>署名文字列</returns>
-    Protected Overridable Function CreateSignature(ByVal tokenSecret As String, _
-                                            ByVal method As String, _
-                                            ByVal uri As Uri, _
-                                            ByVal parameter As Dictionary(Of String, String) _
-                                        ) As String
+    Protected Overridable Function CreateSignature(ByVal tokenSecret As String,
+                                                   ByVal method As String,
+                                                   ByVal uri As Uri,
+                                                   ByVal parameter As Dictionary(Of String, String)
+                                                   ) As String
         'パラメタをソート済みディクショナリに詰替（OAuthの仕様）
         Dim sorted As New SortedDictionary(Of String, String)(parameter)
         'URLエンコード済みのクエリ形式文字列に変換
@@ -491,12 +491,12 @@ Public Class HttpConnectionOAuth
     '''<param name="accessToken">アクセストークン</param>
     '''<param name="accessTokenSecret">アクセストークン秘密鍵</param>
     '''<param name="userIdentifier">アクセストークン取得時に得られるユーザー識別情報。不要なら空文字列</param>
-    Public Sub Initialize(ByVal consumerKey As String, _
-                                    ByVal consumerSecret As String, _
-                                    ByVal accessToken As String, _
-                                    ByVal accessTokenSecret As String, _
-                                    ByVal userIdentifier As String,
-                                    ByVal userIdIdentifier As String)
+    Public Sub Initialize(ByVal consumerKey As String,
+                          ByVal consumerSecret As String,
+                          ByVal accessToken As String,
+                          ByVal accessTokenSecret As String,
+                          ByVal userIdentifier As String,
+                          ByVal userIdIdentifier As String)
         Me.consumerKey = consumerKey
         Me.consumerSecret = consumerSecret
         Me.token = accessToken
@@ -522,14 +522,14 @@ Public Class HttpConnectionOAuth
     '''<param name="accessTokenSecret">アクセストークン秘密鍵</param>
     '''<param name="username">認証済みユーザー名</param>
     '''<param name="userIdentifier">アクセストークン取得時に得られるユーザー識別情報。不要なら空文字列</param>
-    Public Sub Initialize(ByVal consumerKey As String, _
-                                ByVal consumerSecret As String, _
-                                ByVal accessToken As String, _
-                                ByVal accessTokenSecret As String, _
-                                ByVal username As String, _
-                                ByVal userId As Long,
-                                ByVal userIdentifier As String,
-                                ByVal userIdIdentifier As String)
+    Public Sub Initialize(ByVal consumerKey As String,
+                          ByVal consumerSecret As String,
+                          ByVal accessToken As String,
+                          ByVal accessTokenSecret As String,
+                          ByVal username As String,
+                          ByVal userId As Long,
+                          ByVal userIdentifier As String,
+                          ByVal userIdIdentifier As String)
         Initialize(consumerKey, consumerSecret, accessToken, accessTokenSecret, userIdentifier, userIdIdentifier)
         authorizedUsername = username
         authorizedUserId = userId

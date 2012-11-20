@@ -44,10 +44,10 @@ Public Class yfrog
     Private Const ConsumerSecretKey As String = "M0IMsbl2722iWa+CGPVcNeQmE+TFpJk8B/KW9UUTk3eLOl9Ij005r52JNxVukTzM"
 
     Private Const ApiKey As String = "03HJKOWY93b7d7b7a5fa015890f8259cf939e144"
-    Private pictureExt() As String = {".jpg", _
-                                    ".jpeg", _
-                                    ".gif", _
-                                    ".png"}
+    Private pictureExt() As String = {".jpg",
+                                      ".jpeg",
+                                      ".gif",
+                                      ".png"}
 
     Private Const MaxFileSize As Long = 5 * 1024 * 1024
 
@@ -56,6 +56,7 @@ Public Class yfrog
     Public Function Upload(ByRef filePath As String,
                            ByRef message As String,
                            ByVal reply_to As Long) As String Implements IMultimediaShareService.Upload
+
         If String.IsNullOrEmpty(filePath) Then Return "Err:File isn't exists."
         If String.IsNullOrEmpty(message) Then message = ""
         'FileInfo作成
@@ -105,9 +106,9 @@ Public Class yfrog
         Return tw.PostStatus(message, 0)
     End Function
 
-    Private Function UploadFile(ByVal mediaFile As FileInfo, _
-                       ByVal message As String, _
-                       ByRef content As String) As HttpStatusCode
+    Private Function UploadFile(ByVal mediaFile As FileInfo,
+                                ByVal message As String,
+                                ByRef content As String) As HttpStatusCode
         'Message必須
         If String.IsNullOrEmpty(message) Then message = ""
         'Check filetype and size(Max 5MB)
@@ -121,12 +122,12 @@ Public Class yfrog
         binary.Add(New KeyValuePair(Of String, FileInfo)("media", mediaFile))
         Me.InstanceTimeout = 60000 'タイムアウト60秒
 
-        Return GetContent(PostMethod, _
-                          New Uri("http://yfrog.com/api/xauth_upload"), _
-                          param, _
-                          binary, _
-                          content, _
-                          Nothing, _
+        Return GetContent(PostMethod,
+                          New Uri("http://yfrog.com/api/xauth_upload"),
+                          param,
+                          binary,
+                          content,
+                          Nothing,
                           Nothing)
     End Function
 
@@ -160,7 +161,7 @@ Public Class yfrog
     End Function
 
     Public Sub New(ByVal twitter As Twitter)
-        MyBase.New(New Uri("http://api.twitter.com/"), _
+        MyBase.New(New Uri("http://api.twitter.com/"),
                    New Uri("https://api.twitter.com/1/account/verify_credentials.xml"))
         tw = twitter
         Initialize(DecryptString(ConsumerKey), DecryptString(ConsumerSecretKey), tw.AccessToken, tw.AccessTokenSecret, "", "")

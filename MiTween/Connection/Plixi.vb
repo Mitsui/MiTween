@@ -44,10 +44,10 @@ Public Class Plixi
     Private Const ConsumerSecretKey As String = "M0IMsbl2722iWa+CGPVcNeQmE+TFpJk8B/KW9UUTk3eLOl9Ij005r52JNxVukTzM"
 
     Private Const ApiKey As String = "c0263958-f32c-4704-9dac-cdc806b1249c"
-    Private pictureExt() As String = {".jpg", _
-                                    ".jpeg", _
-                                    ".gif", _
-                                    ".png"}
+    Private pictureExt() As String = {".jpg",
+                                      ".jpeg",
+                                      ".gif",
+                                      ".png"}
 
     Private Const MaxFileSize As Long = 5 * 1024 * 1024
 
@@ -103,9 +103,9 @@ Public Class Plixi
         Return tw.PostStatus(message, reply_to)
     End Function
 
-    Private Function UploadFile(ByVal mediaFile As FileInfo, _
-                       ByVal message As String, _
-                       ByRef content As String) As HttpStatusCode
+    Private Function UploadFile(ByVal mediaFile As FileInfo,
+                                ByVal message As String,
+                                ByRef content As String) As HttpStatusCode
         'Message必須
         If String.IsNullOrEmpty(message) Then message = ""
         'Check filetype and size(Max 5MB)
@@ -120,12 +120,12 @@ Public Class Plixi
         binary.Add(New KeyValuePair(Of String, FileInfo)("media", mediaFile))
         Me.InstanceTimeout = 60000 'タイムアウト60秒
 
-        Return GetContent(PostMethod, _
-                          New Uri("http://api.plixi.com/api/upload.aspx"), _
-                          param, _
-                          binary, _
-                          content, _
-                          Nothing, _
+        Return GetContent(PostMethod,
+                          New Uri("http://api.plixi.com/api/upload.aspx"),
+                          param,
+                          binary,
+                          content,
+                          Nothing,
                           Nothing)
     End Function
 
@@ -163,7 +163,7 @@ Public Class Plixi
     End Function
 
     Public Sub New(ByVal twitter As Twitter)
-        MyBase.New(New Uri("http://api.twitter.com/"), _
+        MyBase.New(New Uri("http://api.twitter.com/"),
                    New Uri("https://api.twitter.com/1/account/verify_credentials.json"))
         tw = twitter
         Initialize(DecryptString(ConsumerKey), DecryptString(ConsumerSecretKey), tw.AccessToken, tw.AccessTokenSecret, "", "")

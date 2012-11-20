@@ -80,11 +80,11 @@ Public Class HttpConnection
     '''<param name="param">GET時のクエリ、またはPOST時のエンティティボディ</param>
     '''<param name="withCookie">通信にcookieを使用するか</param>
     '''<returns>引数で指定された内容を反映したHttpWebRequestオブジェクト</returns>
-    Protected Function CreateRequest(ByVal method As String, _
-                                            ByVal requestUri As Uri, _
-                                            ByVal param As Dictionary(Of String, String), _
-                                            ByVal withCookie As Boolean _
-                                        ) As HttpWebRequest
+    Protected Function CreateRequest(ByVal method As String,
+                                     ByVal requestUri As Uri,
+                                     ByVal param As Dictionary(Of String, String),
+                                     ByVal withCookie As Boolean
+                                     ) As HttpWebRequest
         If Not isInitialize Then Throw New Exception("Sequence error.(not initialized)")
 
         'GETメソッドの場合はクエリとurlを結合
@@ -132,12 +132,12 @@ Public Class HttpConnection
     '''<param name="param">form-dataで指定する名前とバイナリファイル情報のリスト</param>
     '''<param name="withCookie">通信にcookieを使用するか</param>
     '''<returns>引数で指定された内容を反映したHttpWebRequestオブジェクト</returns>
-    Protected Function CreateRequest(ByVal method As String, _
-                                        ByVal requestUri As Uri, _
-                                        ByVal param As Dictionary(Of String, String), _
-                                        ByVal binaryFileInfo As List(Of KeyValuePair(Of String, FileInfo)), _
-                                        ByVal withCookie As Boolean _
-                                    ) As HttpWebRequest
+    Protected Function CreateRequest(ByVal method As String,
+                                     ByVal requestUri As Uri,
+                                     ByVal param As Dictionary(Of String, String),
+                                     ByVal binaryFileInfo As List(Of KeyValuePair(Of String, FileInfo)),
+                                     ByVal withCookie As Boolean
+                                     ) As HttpWebRequest
         If Not isInitialize Then Throw New Exception("Sequence error.(not initialized)")
 
         'methodはPOST,PUTのみ許可
@@ -262,11 +262,11 @@ Public Class HttpConnection
     '''<param name="headerInfo">[IN/OUT]HTTP応答のヘッダ情報。ヘッダ名をキーにして空データのコレクションを渡すことで、該当ヘッダの値をデータに設定して戻す</param>
     '''<param name="withCookie">通信にcookieを使用する</param>
     '''<returns>HTTP応答のステータスコード</returns>
-    Protected Function GetResponse(ByVal webRequest As HttpWebRequest, _
-                                        ByVal contentStream As Stream, _
-                                        ByVal headerInfo As Dictionary(Of String, String), _
-                                        ByVal withCookie As Boolean _
-                                    ) As HttpStatusCode
+    Protected Function GetResponse(ByVal webRequest As HttpWebRequest,
+                                   ByVal contentStream As Stream,
+                                   ByVal headerInfo As Dictionary(Of String, String),
+                                   ByVal withCookie As Boolean
+                                   ) As HttpStatusCode
         Try
             Using webRes As HttpWebResponse = CType(webRequest.GetResponse(), HttpWebResponse)
                 Dim statusCode As HttpStatusCode = webRes.StatusCode
@@ -312,11 +312,11 @@ Public Class HttpConnection
     '''<param name="headerInfo">[IN/OUT]HTTP応答のヘッダ情報。ヘッダ名をキーにして空データのコレクションを渡すことで、該当ヘッダの値をデータに設定して戻す</param>
     '''<param name="withCookie">通信にcookieを使用する</param>
     '''<returns>HTTP応答のステータスコード</returns>
-    Protected Function GetResponse(ByVal webRequest As HttpWebRequest, _
-                                        ByRef contentText As String, _
-                                        ByVal headerInfo As Dictionary(Of String, String), _
-                                        ByVal withCookie As Boolean _
-                                    ) As HttpStatusCode
+    Protected Function GetResponse(ByVal webRequest As HttpWebRequest,
+                                   ByRef contentText As String,
+                                   ByVal headerInfo As Dictionary(Of String, String),
+                                   ByVal withCookie As Boolean
+                                   ) As HttpStatusCode
         Try
             Using webRes As HttpWebResponse = CType(webRequest.GetResponse(), HttpWebResponse)
                 Dim statusCode As HttpStatusCode = webRes.StatusCode
@@ -355,10 +355,10 @@ Public Class HttpConnection
     '''<param name="headerInfo">[IN/OUT]HTTP応答のヘッダ情報。ヘッダ名をキーにして空データのコレクションを渡すことで、該当ヘッダの値をデータに設定して戻す</param>
     '''<param name="withCookie">通信にcookieを使用する</param>
     '''<returns>HTTP応答のステータスコード</returns>
-    Protected Function GetResponse(ByVal webRequest As HttpWebRequest, _
-                                        ByVal headerInfo As Dictionary(Of String, String), _
-                                        ByVal withCookie As Boolean _
-                                    ) As HttpStatusCode
+    Protected Function GetResponse(ByVal webRequest As HttpWebRequest,
+                                   ByVal headerInfo As Dictionary(Of String, String),
+                                   ByVal withCookie As Boolean
+                                   ) As HttpStatusCode
         Try
             Using webRes As HttpWebResponse = CType(webRequest.GetResponse(), HttpWebResponse)
                 Dim statusCode As HttpStatusCode = webRes.StatusCode
@@ -390,11 +390,11 @@ Public Class HttpConnection
     '''<param name="headerInfo">[IN/OUT]HTTP応答のヘッダ情報。ヘッダ名をキーにして空データのコレクションを渡すことで、該当ヘッダの値をデータに設定して戻す</param>
     '''<param name="withCookie">通信にcookieを使用する</param>
     '''<returns>HTTP応答のステータスコード</returns>
-    Protected Function GetResponse(ByVal webRequest As HttpWebRequest, _
-                                        ByRef contentBitmap As Bitmap, _
-                                        ByVal headerInfo As Dictionary(Of String, String), _
-                                        ByVal withCookie As Boolean _
-                                    ) As HttpStatusCode
+    Protected Function GetResponse(ByVal webRequest As HttpWebRequest,
+                                   ByRef contentBitmap As Bitmap,
+                                   ByVal headerInfo As Dictionary(Of String, String),
+                                   ByVal withCookie As Boolean
+                                   ) As HttpStatusCode
         Try
             Using webRes As HttpWebResponse = CType(webRequest.GetResponse(), HttpWebResponse)
                 Dim statusCode As HttpStatusCode = webRes.StatusCode
@@ -602,13 +602,12 @@ Public Class HttpConnection
     '''<param name="proxyPort">プロキシのポート番号</param>
     '''<param name="proxyUser">プロキシ認証が必要な場合のユーザ名。不要なら空文字</param>
     '''<param name="proxyPassword">プロキシ認証が必要な場合のパスワード。不要なら空文字</param>
-    Public Shared Sub InitializeConnection( _
-            ByVal timeout As Integer, _
-            ByVal proxyType As ProxyType, _
-            ByVal proxyAddress As String, _
-            ByVal proxyPort As Integer, _
-            ByVal proxyUser As String, _
-            ByVal proxyPassword As String)
+    Public Shared Sub InitializeConnection(ByVal timeout As Integer,
+                                           ByVal proxyType As ProxyType,
+                                           ByVal proxyAddress As String,
+                                           ByVal proxyPort As Integer,
+                                           ByVal proxyUser As String,
+                                           ByVal proxyPassword As String)
         isInitialize = True
         ServicePointManager.Expect100Continue = False
         DefaultTimeout = timeout * 1000     's -> ms

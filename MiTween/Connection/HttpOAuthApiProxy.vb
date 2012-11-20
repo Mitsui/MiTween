@@ -43,11 +43,11 @@ Public Class HttpOAuthApiProxy
         End Set
     End Property
 
-    Protected Overrides Function CreateSignature(ByVal tokenSecret As String, _
-                                            ByVal method As String, _
-                                            ByVal uri As Uri, _
-                                            ByVal parameter As Dictionary(Of String, String) _
-                                        ) As String
+    Protected Overrides Function CreateSignature(ByVal tokenSecret As String,
+                                                 ByVal method As String,
+                                                 ByVal uri As Uri,
+                                                 ByVal parameter As Dictionary(Of String, String)
+                                                 ) As String
         'パラメタをソート済みディクショナリに詰替（OAuthの仕様）
         Dim sorted As New SortedDictionary(Of String, String)(parameter)
         'URLエンコード済みのクエリ形式文字列に変換

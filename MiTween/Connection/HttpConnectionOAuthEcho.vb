@@ -47,10 +47,10 @@ Public Class HttpConnectionOAuthEcho
         End Set
     End Property
 
-    Protected Overrides Sub AppendOAuthInfo(ByVal webRequest As HttpWebRequest, _
-                                ByVal query As Dictionary(Of String, String), _
-                                ByVal token As String, _
-                                ByVal tokenSecret As String)
+    Protected Overrides Sub AppendOAuthInfo(ByVal webRequest As HttpWebRequest,
+                                            ByVal query As Dictionary(Of String, String),
+                                            ByVal token As String,
+                                            ByVal tokenSecret As String)
         'OAuth共通情報取得
         Dim parameter As Dictionary(Of String, String) = GetOAuthParameter(token)
         'OAuth共通情報にquery情報を追加
