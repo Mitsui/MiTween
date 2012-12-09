@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MiTween.ApiInformationChangedEventArgs" Collapsed="true">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiInformation.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ApiInfoBase" Collapsed="true">
+    <Position X="1.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABQAAEAAAAAAAAAAAAAAggAAQAAIIAAAAAAA=</HashCode>
+      <FileName>ApiInformation.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ApiInfo" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAAAAAAAAAAwAAAAAQAAAAAAIAAAAAAACgAAAAgAA=</HashCode>
+      <FileName>ApiInformation.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ApiInformation" Collapsed="true">
+    <Position X="2.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARCAAAgFAQAAAwhABACQAAAAAAKwACAQBBCgAAAAgAA=</HashCode>
+      <FileName>ApiInformation.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.AppendSettingDialog" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>31/3/9v///z/R/H///+//f////r//3////+9Tuf/X+4=</HashCode>
+      <FileName>AppendSettingDialog.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.AtIdSupplement" Collapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCAACGEEKAEAAAAGwCEAAACgAYAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>AtIdSupplement.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.AuthBrowser" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABQgAUGAAgAAAAACAAAAiAAgAAAABAAgAABABAJA=</HashCode>
+      <FileName>AuthBrowser.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.Bing" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAgAAAAAAAAAAAAAAAACAAAAAEAASAAAA=</HashCode>
+      <FileName>bing.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ChangeLog" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAgCAAAAQAAQAAQAAAAAAAA=</HashCode>
+      <FileName>ChangeLog.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.HttpConnection" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAIAACBAAggEgwEAAAAAAAEAAQAAAADQAAAMBA=</HashCode>
+      <FileName>Connection\HttpConnection.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.HttpConnectionOAuth" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAFAAAYAAACAQVAAhABAAAAhFQYCAAAAASABAAAAAQA=</HashCode>
+      <FileName>Connection\HttpConnectionOAuth.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTween.HttpConnectionOAuthEcho" Collapsed="true">
+    <Position X="6.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAABAAAAEAAABQAAAAABABA=</HashCode>
+      <FileName>Connection\HttpConnectionOAuthEcho.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.HttpOAuthApiProxy" Collapsed="true">
+    <Position X="12.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIBAAAAEAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Connection\HttpOAuthApiProxy.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.HttpTwitter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>VCABJBlEAECIQQQSeAABkkhANQGSijQW5CmQLAAyKlY=</HashCode>
+      <FileName>Connection\HttpTwitter.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.HttpVarious" Collapsed="true">
+    <Position X="14.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAEEAABAAAAAAAAAAAQAAAgAAAACCABAAAAABA=</HashCode>
+      <FileName>Connection\HttpVarious.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.imgly" Collapsed="true">
+    <Position X="7.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAABAAAAAAAAABAACAAggAAAEECAAQgAAAABAAAAA=</HashCode>
+      <FileName>Connection\imgly.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTween.Plixi" Collapsed="true">
+    <Position X="10" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAABAAAAAAAAABAACAgggAAAEECAAQgAAAABAAAAA=</HashCode>
+      <FileName>Connection\Plixi.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTween.TwitPic" Collapsed="true">
+    <Position X="3.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAABAAAAAAAAABAACAgggAAAEECAAQgAAAABAAAAA=</HashCode>
+      <FileName>Connection\TwitPic.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTween.TwitterPhoto" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAABAAAAAAAAAAAACAABgAAAEECAAQgAAAABAAAAA=</HashCode>
+      <FileName>Connection\TwitterPhoto.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.yfrog" Collapsed="true">
+    <Position X="5.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAABAAAAAAAAABAACAgggAAAEECAAQgAAAABAAAAA=</HashCode>
+      <FileName>Connection\yfrog.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTween.TwitterDataModel" Collapsed="true">
+    <Position X="29.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataModel.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.DialogAsShieldIcon" Collapsed="true">
+    <Position X="31" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIABEECABEAAIAAKBAAECAAAAAAgAAEAAAAAAAAA=</HashCode>
+      <FileName>DialogAsShieldIcon.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.DoubleClickCopyCanceller" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAACAAAAAgAAAAAAAAAEAAAAAAAAAAQAEAAAA=</HashCode>
+      <FileName>DoubleClickCopyCanceller.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.DynamicClass" Collapsed="true">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.DynamicProperty" Collapsed="true">
+    <Position X="22.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAQAAAAAAAQAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.DynamicOrdering" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.Signature" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.ClassFactory" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIIAAAAAAAAABACAQAAAAAACAAAAASAAAAAABAAg=</HashCode>
+      <FileName>Dynamic.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ParseException" Collapsed="true">
+    <Position X="27.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ExpressionParser" Collapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Co+4gUICBFAhMm7UoEgTE7BCIIzYpCqIKkUKBAmRAYI=</HashCode>
+      <FileName>Dynamic.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.Res" Collapsed="true">
+    <Position X="20.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgMKhAIAgAAgEAgCIBSSAQAFDAgABEACoACAgLAA8A=</HashCode>
+      <FileName>Dynamic.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.EventViewerDialog" Collapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBQFAQDCAKMBGBIAAMGDFSICYAQqCACQICCAAAQAgSA=</HashCode>
+      <FileName>EventViewerDialog.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.FavoriteQueue" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAEAAAAAAABAQAAAABAQUAAACSAAACAAAAABUIAA=</HashCode>
+      <FileName>FavoriteQueue.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.FilterDialog" Collapsed="true">
+    <Position X="29.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>w4cYAWFQECIIAqEQ04qEARDCAhz6tUTiAGEIiIbFMSU=</HashCode>
+      <FileName>FilterDialog.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.FormInfo" Collapsed="true">
+    <Position X="17" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAEAACAACAAAQCEAIAAAMKMAAAAAAAAEA=</HashCode>
+      <FileName>FormInfo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.Foursquare" Collapsed="true">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAQAAAAAAAACAQAAAABAgAAAAAgGAAAAAAAAA=</HashCode>
+      <FileName>Foursquare.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.Google" Collapsed="true">
+    <Position X="18.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAUCAAAAAAgBAAAAIAAAAAAAAAAAAAAAAEAACACAA=</HashCode>
+      <FileName>Google.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.GrowlHelper" Collapsed="true">
+    <Position X="20.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAACAQAECAAAACAAAAOAAAAAAAAAABAAACwAIBAABA=</HashCode>
+      <FileName>Growl.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.HashtagManage" Collapsed="true">
+    <Position X="22.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QkIAABBMUCyJFAACEBDAEAgmCAEzAGiIAEAAioAAADI=</HashCode>
+      <FileName>HashtagManage.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.HookGlobalHotkey" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAQAACBAIAAAAgAAAAAAAACAAAAAAAAAQgQAAAA=</HashCode>
+      <FileName>HookGlobalHotkey.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.ImageDictionary" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAIkQAQAACAEABAQCIAABAQUAAACCAAwgAAgAABQIQA=</HashCode>
+      <FileName>ImageDictionary.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.ImageListViewItem" Collapsed="true">
+    <Position X="31" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAgEAAAAAAQAAAAABAAAAAAAAAAAEA=</HashCode>
+      <FileName>ImageListViewItem.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.InputTabName" Collapsed="true">
+    <Position X="17" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAJgBACCgDEgAAABCEAAAGCAAAAAgACAEAAAAACAA=</HashCode>
+      <FileName>InputTabName.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ListAvailable" Collapsed="true">
+    <Position X="20.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAGBIABQEiABFAAAAACIAAAKogBQAAgACAAAAQAEAAA=</HashCode>
+      <FileName>ListAvailable.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ListElement" Collapsed="true">
+    <Position X="22.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADIAAAAQBgAgBEAQAAAAwAAiAAAAAAAAAEAAQQAAA=</HashCode>
+      <FileName>ListElement.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ListManage" Collapsed="true">
+    <Position X="24" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JROroAAAGqgAaEBAgIyAEACCBgTbOEAB4mIATIAAACQ=</HashCode>
+      <FileName>ListManage.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.MessageForm" Collapsed="true">
+    <Position X="25.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAECAAAAAAAACAAAECAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MessageForm.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.TweenMain" Collapsed="true">
+    <Position X="25.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>///////7//////3vvv/////fv/////9/1//97/////8=</HashCode>
+      <FileName>MiTween.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.MiTweenAboutBox" Collapsed="true">
+    <Position X="27.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAgIAASAAAAAAAACEAABCgAAAAAAAAQCACAAQAAA=</HashCode>
+      <FileName>MiTweenAboutBox.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.MyLists" Collapsed="true">
+    <Position X="31" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIDAIACAAAABAAICggAACBgIQAQECAAAkAAAAADA=</HashCode>
+      <FileName>MyLists.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.MySpecialPath" Collapsed="true">
+    <Position X="18.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACACAAAACAYAAAAACAIAAAAAA=</HashCode>
+      <FileName>MySpecialPath.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.nicoms" Collapsed="true">
+    <Position X="20.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>nicoms.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.OpenURL" Collapsed="true">
+    <Position X="22.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIABAACABEAAAAAOAQAACAAAgAAgAEAABQAAgAAA=</HashCode>
+      <FileName>OpenURL.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.OpenUrlItem" Collapsed="true">
+    <Position X="24" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAABAAEAAAAAAAAAAQAAABACAAACAAAAAA=</HashCode>
+      <FileName>OpenURL.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.Outputz" Collapsed="true">
+    <Position X="25.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAIQAAAAAAAAAiAAAAAAEAAAAAAAAACA=</HashCode>
+      <FileName>Outputz.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.PictureViewer" Collapsed="true">
+    <Position X="31" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACABAACAAAAAAEAgEAAAEQAAAA=</HashCode>
+      <FileName>PictureViewer.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.RadixConvert" Collapsed="true">
+    <Position X="18.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAgAAgEAAAAQCAAAQAAAAAgAABAogJAAAA=</HashCode>
+      <FileName>RadixConvert.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.SearchWord" Collapsed="true">
+    <Position X="22.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAIQBAECABUAAAQACAAIACAAAAAAgAAAIAAAAAACA=</HashCode>
+      <FileName>SearchWord.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.SettingAtIdList" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Setting\SettingAtIdList.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.SettingBase(Of T)" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAMAgAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Setting\SettingBase.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.SettingCommon" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>3dictJihfJSBQlA6USQokS46ikgl5HEGXWKRAMCLEUI=</HashCode>
+      <FileName>Setting\SettingCommon.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.UserAccount" Collapsed="true">
+    <Position X="17" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAEAUAQAIACgAAAAAIAAAAAAAAAABAAA=</HashCode>
+      <FileName>Setting\SettingCommon.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.SettingFollower" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Setting\SettingFollower.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.SettingLocal" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARCA4IBNINAHgACGCQAEAUBDhQrhHiUKKwAwwQABpAI=</HashCode>
+      <FileName>Setting\SettingLocal.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.SettingTabs" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Setting\SettingTabs.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ShieldIcon" Collapsed="true">
+    <Position X="24" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAAAAQABAAAACAAAABAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ShieldIcon.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ShortUrl" Collapsed="true">
+    <Position X="25.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAgCABAAAACABACBJAAAAEBAACAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>ShortUrl.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ShowUserInfo" Collapsed="true">
+    <Position X="27.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>bpkxQEUEWTZAABloWJrzBSCD0QduQBQXAQ+iMiEIIkY=</HashCode>
+      <FileName>ShowUserInfo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.PostClass" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>m8ABcAAICoQQgQAoiCABEAkCGkAAIAIqGAgUKQEAIJQ=</HashCode>
+      <FileName>StatusDictionary.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.TabInformations" Collapsed="true">
+    <Position X="17" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkCFBoEBMAQEAAEQTTJxQIgFBpBEA0AAQAQEggKIiCA=</HashCode>
+      <FileName>StatusDictionary.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.TabClass" Collapsed="true">
+    <Position X="31" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEKFABAMIAWCUgAEBIIyBBghCDCTAABIJAEMIoIQCAA=</HashCode>
+      <FileName>StatusDictionary.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.FiltersClass" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DLCEoEgQAkAAPcYEgEIARAMAAAEAGIgAoAQCBQQQMAA=</HashCode>
+      <FileName>StatusDictionary.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.IdComparerClass" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAMASAICYYAEIgAAAgAIAAAAAAAAggAAAABAAAAAgAA=</HashCode>
+      <FileName>StatusDictionary.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.TabsDialog" Collapsed="true">
+    <Position X="18.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EoAAIAhAAGABEAEIAACAAAQCCAAAAEgAACAEAAAAAAA=</HashCode>
+      <FileName>TabsDialog.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.Thumbnail" Collapsed="true">
+    <Position X="20.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gjFMkZWBA0oQQJAKICwgAARBAhrhosEwoGCcKeCTRAE=</HashCode>
+      <FileName>Thumbnail.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.ToolStripAPIGauge" Collapsed="true">
+    <Position X="22.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAEIAAAwAAAIABAAAAAEAAAAgBAAAgAAAgAAA=</HashCode>
+      <FileName>ToolStripAPIGauge.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.Twitter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>G1Y3kBVBUue1gflyDcJcZ1t8mUS6CHImxGD5n2Bv9FI=</HashCode>
+      <FileName>Twitter.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.UserInfo" Collapsed="true">
+    <Position X="18.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACQAAAAIAgAAAUCCICAAQQAAAAAAIASAAAAAADAAA=</HashCode>
+      <FileName>UserInfo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.InternetSecurityManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFACAWEAAEAEAAAAIAAAAAAAAABAAAAAACAAAICAAAg=</HashCode>
+      <FileName>WebBrowserController.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTween.My.MyApplication" Collapsed="true">
+    <Position X="29.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAEAgAAAABAAAIQAAAAAAAAACAAAAAIAAAA=</HashCode>
+      <FileName>ApplicationEvents.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.My.MySettings" Collapsed="true">
+    <Position X="17" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAABAAIAAABAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.TweenCustomControl.DetailsListView" Collapsed="true">
+    <Position X="29.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAABAAACIAAQQgAEAAwAQgEAACAAgAgAAQAAAgAg=</HashCode>
+      <FileName>DetailsListView.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.TweenCustomControl.PictureBoxEx" Collapsed="true">
+    <Position X="29.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PictureBoxEx.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTween.TweenCustomControl.ToolStripLabelHistory" Collapsed="true">
+    <Position X="24" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAACAAACAIAAAA=</HashCode>
+      <FileName>ToolStripLabelHistory.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MiTween.IHttpConnection" Collapsed="true">
+    <Position X="17" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAACAAAAAAAAAAAIAAAAAAAAAASAAAAAAAAA=</HashCode>
+      <FileName>Connection\IHttpConnection.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTween.IMultimediaShareService" Collapsed="true">
+    <Position X="18.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAACAAAgAAAEEAAAAgAAAABAAAAA=</HashCode>
+      <FileName>Connection\IMultimediaShareService.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MiTween.ApiAccessLevel" Collapsed="true">
+    <Position X="17" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAgAAAAABAAEAABA=</HashCode>
+      <FileName>ApiInformation.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Module Name="MiTween.DynamicQueryable" Collapsed="true">
+    <Position X="18.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIACAACAAAAAAAAAAAAAAAQAAAEAAAAAAAEAQAAAEAA=</HashCode>
+      <FileName>Dynamic.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="MiTween.DynamicExpression" Collapsed="true">
+    <Position X="17" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAQCAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="MiTween.MyCommon" Collapsed="true">
+    <Position X="20.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YiAGMBAAAAASACAAKAAAAQAEAAAAAwEAiABAAAEEAEA=</HashCode>
+      <FileName>MyCommon.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="MiTween.Win32Api" Collapsed="true">
+    <Position X="25.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABIAGABQAJBCMGBgSSAACAAABAABS0AAkAAAEAkBCA=</HashCode>
+      <FileName>Win32Api.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="MiTween.My.MySettingsProperty" Collapsed="true">
+    <Position X="22.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="MiTween.My.Resources.Resources" Collapsed="true">
+    <Position X="24" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>9/vPJvNd/fX//5n9sasFWKZ/u2H+wp+9/HS1W1r+b+8=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="メイリオ" Size="9" />
+</ClassDiagram>

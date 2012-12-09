@@ -87,8 +87,6 @@ Partial Class TweenMain
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.IconNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveIconPictureToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NameLabel = New System.Windows.Forms.Label()
-        Me.DateTimeLabel = New System.Windows.Forms.Label()
         Me.SourceLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.ContextMenuSource = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SourceCopyMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -121,6 +119,8 @@ Partial Class TweenMain
         Me.UseHashtagMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SelectionTranslationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TranslationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DateTimeLabel = New System.Windows.Forms.Label()
+        Me.NameTextBox = New System.Windows.Forms.TextBox()
         Me.StatusText = New System.Windows.Forms.TextBox()
         Me.lblLen = New System.Windows.Forms.Label()
         Me.PostButton = New System.Windows.Forms.Button()
@@ -699,10 +699,10 @@ Partial Class TweenMain
         '
         resources.ApplyResources(Me.TableLayoutPanel1, "TableLayoutPanel1")
         Me.TableLayoutPanel1.Controls.Add(Me.UserPicture, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.NameLabel, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.DateTimeLabel, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.SourceLinkLabel, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.PostBrowser, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.DateTimeLabel, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.NameTextBox, 1, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         '
         'UserPicture
@@ -776,19 +776,6 @@ Partial Class TweenMain
         '
         Me.SaveIconPictureToolStripMenuItem.Name = "SaveIconPictureToolStripMenuItem"
         resources.ApplyResources(Me.SaveIconPictureToolStripMenuItem, "SaveIconPictureToolStripMenuItem")
-        '
-        'NameLabel
-        '
-        Me.NameLabel.AutoEllipsis = True
-        resources.ApplyResources(Me.NameLabel, "NameLabel")
-        Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.UseMnemonic = False
-        '
-        'DateTimeLabel
-        '
-        resources.ApplyResources(Me.DateTimeLabel, "DateTimeLabel")
-        Me.DateTimeLabel.AutoEllipsis = True
-        Me.DateTimeLabel.Name = "DateTimeLabel"
         '
         'SourceLinkLabel
         '
@@ -963,6 +950,20 @@ Partial Class TweenMain
         '
         Me.TranslationToolStripMenuItem.Name = "TranslationToolStripMenuItem"
         resources.ApplyResources(Me.TranslationToolStripMenuItem, "TranslationToolStripMenuItem")
+        '
+        'DateTimeLabel
+        '
+        resources.ApplyResources(Me.DateTimeLabel, "DateTimeLabel")
+        Me.DateTimeLabel.AutoEllipsis = True
+        Me.DateTimeLabel.Name = "DateTimeLabel"
+        '
+        'NameTextBox
+        '
+        Me.NameTextBox.BackColor = System.Drawing.SystemColors.Control
+        Me.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        resources.ApplyResources(Me.NameTextBox, "NameTextBox")
+        Me.NameTextBox.Name = "NameTextBox"
+        Me.NameTextBox.TabStop = False
         '
         'StatusText
         '
@@ -2011,7 +2012,7 @@ Partial Class TweenMain
         Me.ContextMenuFile.ResumeLayout(False)
         Me.ResumeLayout(False)
 
-    End Sub
+End Sub
     Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
     Friend WithEvents ContextMenuFile As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents EndToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -2078,7 +2079,6 @@ Partial Class TweenMain
     Friend WithEvents SplitContainer2 As System.Windows.Forms.SplitContainer
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents UserPicture As TweenCustomControl.PictureBoxEx
-    Friend WithEvents NameLabel As System.Windows.Forms.Label
     Friend WithEvents DateTimeLabel As System.Windows.Forms.Label
     Friend WithEvents StatusText As System.Windows.Forms.TextBox
     Friend WithEvents lblLen As System.Windows.Forms.Label
@@ -2298,5 +2298,6 @@ Partial Class TweenMain
     Friend WithEvents ToolStripComboBox1 As System.Windows.Forms.ToolStripComboBox
     Friend WithEvents RtCountToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ChangeLogMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NameTextBox As System.Windows.Forms.TextBox
 
 End Class

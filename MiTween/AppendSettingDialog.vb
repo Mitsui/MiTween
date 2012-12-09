@@ -2302,7 +2302,7 @@ Public Class AppendSettingDialog
 
         '通信基底クラス初期化
         HttpConnection.InitializeConnection(20, ptype, padr, pport, pusr, ppw)
-        HttpTwitter.TwitterUrl = TwitterAPIText.Text.Trim
+        HttpTwitter.TwitterUrl = TwitterAPIText.Text.Trim()
         HttpTwitter.TwitterSearchUrl = TwitterSearchAPIText.Text.Trim
         tw.Initialize("", "", "", 0)
         'Me.AuthStateLabel.Text = My.Resources.AuthorizeButton_Click4

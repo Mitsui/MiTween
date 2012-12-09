@@ -27,6 +27,7 @@
 Imports System.Collections.Specialized
 Imports System.Linq.Expressions
 
+'振り分けルールダイアログ
 Public Class FilterDialog
 
     Private _mode As EDITMODE
@@ -483,7 +484,7 @@ Public Class FilterDialog
         ft.SetMark = CheckMark.Checked
 
         Dim bdy As String = ""
-        If RadioAND.Checked Then
+        If RadioAND.Checked Then    '複合条件
             ft.NameFilter = UID.Text
             Dim cnt As Integer = TweenMain.AtIdSupl.ItemCount
             TweenMain.AtIdSupl.AddItem("@" + ft.NameFilter)
@@ -492,7 +493,7 @@ Public Class FilterDialog
             End If
             ft.SearchBoth = True
             bdy = MSG1.Text
-        Else
+        Else                        '単一条件
             ft.NameFilter = ""
             ft.SearchBoth = False
             bdy = MSG2.Text
@@ -586,19 +587,24 @@ Public Class FilterDialog
         End Try
         Return True
     End Function
-
+    'ルールのチェック
     Private Function CheckMatchRule(ByRef isBlank As Boolean) As Boolean
         isBlank = False
-        TextSource.Text = TextSource.Text.Trim()
-        If RadioAND.Checked Then
-            MSG1.Text = MSG1.Text.Trim
-            UID.Text = UID.Text.Trim()
-            If Not CheckRegex.Checked AndAlso Not CheckLambda.Checked Then MSG1.Text = MSG1.Text.Replace("　", " ")
+
+        TextSource.Text = TextSource.Text.Trim()    '前後の空白を削除
+
+
+        If RadioAND.Checked Then '複合条件
+            MSG1.Text = MSG1.Text.Trim()            '前後の空白を削除
+            UID.Text = UID.Text.Trim()              '前後の空白を削除
+            If Not CheckRegex.Checked AndAlso Not CheckLambda.Checked Then MSG1.Text = MSG1.Text.Replace("　", " ") '全角スペースを半角にする
 
             If UID.Text = "" AndAlso MSG1.Text = "" AndAlso TextSource.Text = "" AndAlso CheckRetweet.Checked = False Then
                 isBlank = True
                 Return True
             End If
+
+            'ラムダ式
             If CheckLambda.Checked Then
                 If Not IsValidLambdaExp(UID.Text) Then
                     Return False
@@ -614,9 +620,11 @@ Public Class FilterDialog
                     Return False
                 End If
             End If
-        Else
-            MSG2.Text = MSG2.Text.Trim
-            If Not CheckRegex.Checked AndAlso Not CheckLambda.Checked Then MSG2.Text = MSG2.Text.Replace("　", " ")
+
+
+        Else '単一条件
+            MSG2.Text = MSG2.Text.Trim()            '前後の空白を削除
+            If Not CheckRegex.Checked AndAlso Not CheckLambda.Checked Then MSG2.Text = MSG2.Text.Replace("　", " ") '全角スペースを半角にする
             If MSG2.Text = "" AndAlso TextSource.Text = "" AndAlso CheckRetweet.Checked = False Then
                 isBlank = True
                 Return True
@@ -631,9 +639,11 @@ Public Class FilterDialog
         If CheckRegex.Checked AndAlso Not IsValidRegexp(TextSource.Text) Then
             Return False
         End If
-        Return True
-    End Function
 
+        Return True
+
+    End Function
+    '除外ルールのチェック
     Private Function CheckExcludeRule(ByRef isBlank As Boolean) As Boolean
         isBlank = False
         TextExSource.Text = TextExSource.Text.Trim
@@ -895,7 +905,7 @@ Public Class FilterDialog
         ExMSG1.Enabled = flg
         ExMSG2.Enabled = Not flg
     End Sub
-
+    '移動を選択した時、コピーの「マークする」無効にする
     Private Sub OptMove_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OptMove.CheckedChanged
         CheckMark.Enabled = Not OptMove.Checked
     End Sub
