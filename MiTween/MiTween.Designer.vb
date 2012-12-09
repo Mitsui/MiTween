@@ -963,6 +963,7 @@ Partial Class TweenMain
         Me.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         resources.ApplyResources(Me.NameTextBox, "NameTextBox")
         Me.NameTextBox.Name = "NameTextBox"
+        Me.NameTextBox.ReadOnly = True
         Me.NameTextBox.TabStop = False
         '
         'StatusText
